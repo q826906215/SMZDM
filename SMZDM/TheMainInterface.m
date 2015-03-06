@@ -209,6 +209,28 @@
     
     [hostInterface addSubview:haiTao];
     
+    
+    
+    [NetworkTool getFistPageExperienceDataCompletionBlock:^(NSDictionary *dic) {
+        experienceCless =[ExperienceBaseClass modelObjectWithDictionary:dic];
+        
+        [experience reloadData];
+    }];
+    
+    experience =[[UITableView alloc]initWithFrame:CGRectMake(1600, 0, 320, 568)];
+    
+    experience.delegate =self;
+    
+    experience.dataSource =self;
+    
+    experience.rowHeight =156;
+    
+    experience.tag =105;
+    
+    [experience  registerClass:[TheListViewCell class] forCellReuseIdentifier:@"experience"];
+    
+    [hostInterface addSubview:experience];
+    
     [NetworkTool getFistPageInformationDataCompletionBlock:^(NSDictionary *dic) {
         
         informationClass =[InformationBaseClass modelObjectWithDictionary:dic];
@@ -216,8 +238,6 @@
         [information  reloadData];
         
     }];
-    
-    
     information=[[UITableView alloc]initWithFrame:CGRectMake(1920, 0, 320, 568)];
     
     information.delegate =self;
@@ -390,7 +410,7 @@
     }else if(tableView.tag == 104){
         return haiTaoClass.data.rows.count;
     }else if(tableView.tag == 105){
-        return haiTaoClass.data.rows.count;
+        return experienceCless.data.rows.count;
     }else if(tableView.tag == 106){
         return informationClass.data.rows.count;
     }else{
@@ -471,8 +491,23 @@
         return cell;
         
     }else if (tableView.tag == 105){
-        TheListViewCell *cell =(TheListViewCell *)[tableView dequeueReusableCellWithIdentifier:@"information"forIndexPath:indexPath];
         
+        TheListViewCell *cell =(TheListViewCell *)[tableView dequeueReusableCellWithIdentifier:@"experience"forIndexPath:indexPath];
+        
+        [cell.headerImageView setImageWithURL:[NSURL URLWithString:[[experienceCless.data.rows objectAtIndex:indexPath.row]articlePic]]];
+        
+        cell.label.text=[[experienceCless.data.rows objectAtIndex:indexPath.row]articleReferrals];
+        
+        cell.rightLabel.text =[[experienceCless.data.rows objectAtIndex:indexPath.row]articleFormatDate];
+        
+        cell.bigLabel.text =[[experienceCless.data.rows objectAtIndex:indexPath.row]articleFilterContent];
+        
+        cell.redLabel.text =[[experienceCless.data.rows objectAtIndex:indexPath.row]articleTitle];
+        
+        cell.iImageView.image=[UIImage imageNamed:@"ic_no_comment@2x.png"];
+        
+        cell.nextLabel.text =[[experienceCless.data.rows objectAtIndex:indexPath.row]articleComment];
+
         return cell;
         
     }else if(tableView.tag == 106)  {

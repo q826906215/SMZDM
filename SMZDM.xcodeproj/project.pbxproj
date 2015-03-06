@@ -46,6 +46,9 @@
 		121D74061AA9C878008A9CBF /* InformationBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 121D74011AA9C878008A9CBF /* InformationBaseClass.m */; };
 		121D74071AA9C878008A9CBF /* InformationData.m in Sources */ = {isa = PBXBuildFile; fileRef = 121D74031AA9C878008A9CBF /* InformationData.m */; };
 		121D74081AA9C878008A9CBF /* InformationRows.m in Sources */ = {isa = PBXBuildFile; fileRef = 121D74051AA9C878008A9CBF /* InformationRows.m */; };
+		121D74101AA9F26E008A9CBF /* ExperienceBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 121D740B1AA9F26E008A9CBF /* ExperienceBaseClass.m */; };
+		121D74111AA9F26E008A9CBF /* ExperienceData.m in Sources */ = {isa = PBXBuildFile; fileRef = 121D740D1AA9F26E008A9CBF /* ExperienceData.m */; };
+		121D74121AA9F26E008A9CBF /* ExperienceRows.m in Sources */ = {isa = PBXBuildFile; fileRef = 121D740F1AA9F26E008A9CBF /* ExperienceRows.m */; };
 		1276842A1AA78FEE00B09810 /* ScrollBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 127684251AA78FEE00B09810 /* ScrollBaseClass.m */; };
 		1276842B1AA78FEE00B09810 /* ScrollData.m in Sources */ = {isa = PBXBuildFile; fileRef = 127684271AA78FEE00B09810 /* ScrollData.m */; };
 		1276842C1AA78FEE00B09810 /* ScrollRows.m in Sources */ = {isa = PBXBuildFile; fileRef = 127684291AA78FEE00B09810 /* ScrollRows.m */; };
@@ -151,6 +154,12 @@
 		121D74031AA9C878008A9CBF /* InformationData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InformationData.m; sourceTree = "<group>"; };
 		121D74041AA9C878008A9CBF /* InformationRows.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InformationRows.h; sourceTree = "<group>"; };
 		121D74051AA9C878008A9CBF /* InformationRows.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InformationRows.m; sourceTree = "<group>"; };
+		121D740A1AA9F26E008A9CBF /* ExperienceBaseClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExperienceBaseClass.h; sourceTree = "<group>"; };
+		121D740B1AA9F26E008A9CBF /* ExperienceBaseClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExperienceBaseClass.m; sourceTree = "<group>"; };
+		121D740C1AA9F26E008A9CBF /* ExperienceData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExperienceData.h; sourceTree = "<group>"; };
+		121D740D1AA9F26E008A9CBF /* ExperienceData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExperienceData.m; sourceTree = "<group>"; };
+		121D740E1AA9F26E008A9CBF /* ExperienceRows.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExperienceRows.h; sourceTree = "<group>"; };
+		121D740F1AA9F26E008A9CBF /* ExperienceRows.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExperienceRows.m; sourceTree = "<group>"; };
 		127684241AA78FEE00B09810 /* ScrollBaseClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollBaseClass.h; sourceTree = "<group>"; };
 		127684251AA78FEE00B09810 /* ScrollBaseClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollBaseClass.m; sourceTree = "<group>"; };
 		127684261AA78FEE00B09810 /* ScrollData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollData.h; sourceTree = "<group>"; };
@@ -317,6 +326,19 @@
 			path = information;
 			sourceTree = "<group>";
 		};
+		121D74091AA9F26E008A9CBF /* Experience */ = {
+			isa = PBXGroup;
+			children = (
+				121D740A1AA9F26E008A9CBF /* ExperienceBaseClass.h */,
+				121D740B1AA9F26E008A9CBF /* ExperienceBaseClass.m */,
+				121D740C1AA9F26E008A9CBF /* ExperienceData.h */,
+				121D740D1AA9F26E008A9CBF /* ExperienceData.m */,
+				121D740E1AA9F26E008A9CBF /* ExperienceRows.h */,
+				121D740F1AA9F26E008A9CBF /* ExperienceRows.m */,
+			);
+			path = Experience;
+			sourceTree = "<group>";
+		};
 		125C4E4B1AA953DA009C1118 /* Resource map */ = {
 			isa = PBXGroup;
 			children = (
@@ -393,6 +415,7 @@
 				12D39DB41AA89E6E000D783C /* Select */,
 				121D73DF1AA97439008A9CBF /* preferential */,
 				121D73EE1AA985D7008A9CBF /* HaiTao */,
+				121D74091AA9F26E008A9CBF /* Experience */,
 				121D73FE1AA9C878008A9CBF /* information */,
 				12D39D1A1AA7FDBD000D783C /* AFNetworking */,
 				12A320BD1AA7449700256CC9 /* AppDelegate.h */,
@@ -640,6 +663,7 @@
 				12D39DB31AA873E5000D783C /* UIImageView+WebCache.m in Sources */,
 				121D73FD1AA9AF7E008A9CBF /* TheListViewCell.m in Sources */,
 				095202051AA9DD7D00A12CBC /* SearchVC.m in Sources */,
+				121D74111AA9F26E008A9CBF /* ExperienceData.m in Sources */,
 				1276842A1AA78FEE00B09810 /* ScrollBaseClass.m in Sources */,
 				12A320BF1AA7449700256CC9 /* AppDelegate.m in Sources */,
 				121D73E91AA97439008A9CBF /* preferentialBaseClass.m in Sources */,
@@ -662,12 +686,14 @@
 				12D39DBC1AA89E6E000D783C /* SelectData.m in Sources */,
 				1276842C1AA78FEE00B09810 /* ScrollRows.m in Sources */,
 				1276842B1AA78FEE00B09810 /* ScrollData.m in Sources */,
+				121D74101AA9F26E008A9CBF /* ExperienceBaseClass.m in Sources */,
 				12D39DAE1AA873E5000D783C /* SDWebImageDecoder.m in Sources */,
 				12A320BC1AA7449700256CC9 /* main.m in Sources */,
 				121D73F51AA985D7008A9CBF /* HaiTaoBaseClass.m in Sources */,
 				12D39DB01AA873E5000D783C /* SDWebImageManager.m in Sources */,
 				12D39D2F1AA7FDBD000D783C /* AFHTTPRequestOperationManager.m in Sources */,
 				12D39D321AA7FDBD000D783C /* AFSecurityPolicy.m in Sources */,
+				121D74121AA9F26E008A9CBF /* ExperienceRows.m in Sources */,
 				121D73EB1AA97439008A9CBF /* preferentialRows.m in Sources */,
 				12D39DAC1AA873E5000D783C /* MKAnnotationView+WebCache.m in Sources */,
 				0952020F1AA9DDFD00A12CBC /* AllTableView.m in Sources */,

@@ -23,7 +23,7 @@
         
         UILabel *label =[[UILabel alloc]initWithFrame:CGRectMake(116, 8, 100, 20)];
         
-        label.font =[UIFont systemFontOfSize:16];
+        label.font =[UIFont systemFontOfSize:14];
         
         label.tintColor =[UIColor blackColor];
         

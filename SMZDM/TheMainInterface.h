@@ -20,6 +20,8 @@
     
     HaiTaoBaseClass *haiTaoClass;
     
+    ExperienceBaseClass *experienceCless;
+    
     InformationBaseClass *informationClass;
     
     UIScrollView *articleClassification;
@@ -36,7 +38,7 @@
     
     
     
-    
+    UITableView *experience;
     
     UITableView *information;
     

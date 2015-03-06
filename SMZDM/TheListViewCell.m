@@ -16,11 +16,11 @@
     
     if (self) {
         
-        UILabel *redLabel =[[UILabel alloc]initWithFrame:CGRectMake(0, 0, 320, 40)];
+        UILabel *redLabel =[[UILabel alloc]initWithFrame:CGRectMake(8, 0, 300, 40)];
         
-        redLabel.font =[UIFont systemFontOfSize:15];
+        redLabel.numberOfLines =0;
         
-        redLabel.textColor=[UIColor redColor];
+        redLabel.font =[UIFont systemFontOfSize:16];
         
         [self addSubview:redLabel];
         
@@ -28,15 +28,13 @@
         
         UIImageView * imageView =[[UIImageView alloc]initWithFrame:CGRectMake(8,48, 100, 100)];
         
-        imageView.backgroundColor =[UIColor redColor];
-        
         [self addSubview:imageView];
         
         self.headerImageView =imageView;
         
         UILabel *label =[[UILabel alloc]initWithFrame:CGRectMake(116, 48, 100, 20)];
         
-        label.font =[UIFont systemFontOfSize:16];
+        label.font =[UIFont systemFontOfSize:14];
         
         label.tintColor =[UIColor blackColor];
         
@@ -52,7 +50,7 @@
         
         rightLabel.tintColor =[UIColor blackColor];
         
-        rightLabel.alpha =0.3;
+        rightLabel.alpha =0.4;
         
         [self addSubview:rightLabel ];
         
@@ -60,7 +58,9 @@
         
         UILabel *bigLabel =[[UILabel alloc]initWithFrame:CGRectMake(116, 70, 194, 60)];
         
-        bigLabel.font =[UIFont systemFontOfSize:14];
+        bigLabel.font =[UIFont systemFontOfSize:16];
+        
+        bigLabel.alpha =0.3;
         
         bigLabel.numberOfLines =0;
         

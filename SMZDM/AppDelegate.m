@@ -26,6 +26,9 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
+    
+    
+    
     productIntroduction=[[UIScrollView alloc]initWithFrame:[UIScreen mainScreen].bounds];
     
     productIntroduction.pagingEnabled =YES;

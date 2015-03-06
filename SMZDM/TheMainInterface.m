@@ -11,6 +11,7 @@
 #import "TheListOf.h"
 #import "UIImageView+WebCache.h"
 #import "NetworkTool.h"
+#import "SearchVC.h"
 
 
 
@@ -25,6 +26,15 @@
     // Do any additional setup after loading the view.
     
     self.title =@"什么值得买";
+    UIButton * leftButton =[UIButton buttonWithType:UIButtonTypeCustom];
+    leftButton.frame =CGRectMake(0, 0, 20, 20);
+    [leftButton setBackgroundImage:[UIImage imageNamed:@"ic_search@2x.png"] forState:UIControlStateNormal];
+    [leftButton  addTarget:self action:@selector(searchShop) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIBarButtonItem * leftItem =[[UIBarButtonItem alloc] initWithCustomView:leftButton];
+    self.navigationItem.leftBarButtonItem=leftItem;
+    
+
     
     [self.navigationController.navigationBar setBackgroundImage:[UIImage alloc] forBarMetrics:UIBarMetricsDefault];
     
@@ -44,6 +54,14 @@
         
         [self  Classification];
     }];
+    
+    
+}
+
+-(void)searchShop
+{
+    SearchVC * svc =[[SearchVC alloc] init];
+    [self presentViewController:svc animated:YES completion:nil];
     
     
 }

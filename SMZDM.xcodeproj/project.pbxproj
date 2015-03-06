@@ -145,7 +145,6 @@
 		121D73F41AA985D7008A9CBF /* HaiTaoRows.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HaiTaoRows.m; sourceTree = "<group>"; };
 		121D73FB1AA9AF7E008A9CBF /* TheListViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TheListViewCell.h; sourceTree = "<group>"; };
 		121D73FC1AA9AF7E008A9CBF /* TheListViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TheListViewCell.m; sourceTree = "<group>"; };
-		121D73FF1AA9C878008A9CBF /* DataModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModels.h; sourceTree = "<group>"; };
 		121D74001AA9C878008A9CBF /* InformationBaseClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InformationBaseClass.h; sourceTree = "<group>"; };
 		121D74011AA9C878008A9CBF /* InformationBaseClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InformationBaseClass.m; sourceTree = "<group>"; };
 		121D74021AA9C878008A9CBF /* InformationData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InformationData.h; sourceTree = "<group>"; };
@@ -308,7 +307,6 @@
 		121D73FE1AA9C878008A9CBF /* information */ = {
 			isa = PBXGroup;
 			children = (
-				121D73FF1AA9C878008A9CBF /* DataModels.h */,
 				121D74001AA9C878008A9CBF /* InformationBaseClass.h */,
 				121D74011AA9C878008A9CBF /* InformationBaseClass.m */,
 				121D74021AA9C878008A9CBF /* InformationData.h */,

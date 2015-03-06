@@ -9,6 +9,7 @@
 #import "TheMainInterface.h"
 #import "AFNetworking.h"
 #import "TheListOf.h"
+#import "TheListViewCell.h"
 #import "UIImageView+WebCache.h"
 #import "NetworkTool.h"
 #import "SearchVC.h"
@@ -209,24 +210,30 @@
     [hostInterface addSubview:haiTao];
     
     [NetworkTool getFistPageInformationDataCompletionBlock:^(NSDictionary *dic) {
+        
         informationClass =[InformationBaseClass modelObjectWithDictionary:dic];
+        
+        [information  reloadData];
         
     }];
     
     
-    information=[[UITableView alloc]initWithFrame:CGRectMake(320, 0, 320, 568)];
+    information=[[UITableView alloc]initWithFrame:CGRectMake(1920, 0, 320, 568)];
     
     information.delegate =self;
     
     information.dataSource =self;
     
-    information.rowHeight =116;
+    information.rowHeight =156;
     
-    information.tag =101;
+    information.tag =106;
     
-    [information registerClass:[TheListOf class] forCellReuseIdentifier:@"cell"];
+    [information registerClass:[TheListViewCell class] forCellReuseIdentifier:@"information"];
     
     [hostInterface addSubview:information];
+    
+    
+    
     
     [self selectedColumnsScrollView];
     
@@ -344,24 +351,28 @@
     {
         return;
     }
-    CGFloat x=scrollView.contentOffset.x;
-    
-    int index =x/320;
-    NSLog(@"%d",index);
-    
-    [articleClassification setContentOffset:CGPointMake(30*index, 0) animated:YES];
-    
-    NSDictionary *dic =@{NSFontAttributeName:[UIFont systemFontOfSize:20]};
-    
-    float width=[@"色魔" sizeWithAttributes:dic].width;
-    
-    pageControl.currentPage =index;
-    
-    [UIView animateWithDuration:0.5 animations:^{
-        _markimage.bounds =CGRectMake(0, 0, width, 3);
+    if (scrollView==hostInterface)
+    {
+        CGFloat x=scrollView.contentOffset.x;
         
-        _markimage.center =CGPointMake(70*index+35, 47.5);
-    }];
+        int index =x/320;
+        NSLog(@"%d",index);
+        
+        [articleClassification setContentOffset:CGPointMake(30*index, 0) animated:YES];
+        
+        NSDictionary *dic =@{NSFontAttributeName:[UIFont systemFontOfSize:20]};
+        
+        float width=[@"色魔" sizeWithAttributes:dic].width;
+        
+        pageControl.currentPage =index;
+        
+        [UIView animateWithDuration:0.5 animations:^{
+            _markimage.bounds =CGRectMake(0, 0, width, 3);
+            
+            _markimage.center =CGPointMake(70*index+35, 47.5);
+        }];
+    }
+
 }
 
 #pragma mark-UITableView
@@ -369,12 +380,19 @@
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
     if (tableView.tag==100) {
-        
         return selectClass.data.rows.count;
     }else if(tableView.tag ==101){
         return preferentialClass.data.rows.count;
     }else if(tableView.tag == 102){
         return haiTaoClass.data.rows.count;
+    }else if(tableView.tag == 103){
+        return haiTaoClass.data.rows.count;
+    }else if(tableView.tag == 104){
+        return haiTaoClass.data.rows.count;
+    }else if(tableView.tag == 105){
+        return haiTaoClass.data.rows.count;
+    }else if(tableView.tag == 106){
+        return informationClass.data.rows.count;
     }else{
         return 0;
     }
@@ -441,22 +459,59 @@
         
         return cell;
         
-    }else{
-        TheListOf *cell =(TheListOf *)[tableView dequeueReusableCellWithIdentifier:@"haitao" forIndexPath:indexPath];
+    }else if (tableView.tag == 103){
+        TheListViewCell *cell =(TheListViewCell *)[tableView dequeueReusableCellWithIdentifier:@"information"forIndexPath:indexPath];
         
         return cell;
+        
+        
+    }else if (tableView.tag == 104){
+        TheListViewCell *cell =(TheListViewCell *)[tableView dequeueReusableCellWithIdentifier:@"information"forIndexPath:indexPath];
+        
+        return cell;
+        
+    }else if (tableView.tag == 105){
+        TheListViewCell *cell =(TheListViewCell *)[tableView dequeueReusableCellWithIdentifier:@"information"forIndexPath:indexPath];
+        
+        return cell;
+        
+    }else if(tableView.tag == 106)  {
+        
+        TheListViewCell *cell =(TheListViewCell *)[tableView dequeueReusableCellWithIdentifier:@"information"forIndexPath:indexPath];
+        
+        [cell.headerImageView setImageWithURL:[NSURL URLWithString:[[informationClass.data.rows objectAtIndex:indexPath.row]articlePic]]];
+        
+        cell.label.text=[[informationClass.data.rows objectAtIndex:indexPath.row]articleRzlx];
+        
+        cell.rightLabel.text =[[informationClass.data.rows objectAtIndex:indexPath.row]articleFormatDate];
+        
+        cell.bigLabel.text =[[informationClass.data.rows objectAtIndex:indexPath.row]articleFilterContent];
+        
+        cell.redLabel.text =[[informationClass.data.rows objectAtIndex:indexPath.row]articleTitle];
+        
+        cell.iImageView.image=[UIImage imageNamed:@"ic_no_comment@2x.png"];
+        
+        cell.nextLabel.text =[[informationClass.data.rows objectAtIndex:indexPath.row]articleComment];
+        
+        return cell;
+    }else{
+        TheListViewCell *cell =(TheListViewCell *)[tableView dequeueReusableCellWithIdentifier:@"information"forIndexPath:indexPath];
+        
+        return cell;
+        
     }
     
 }
 #pragma mark -ScrollViewArticleClassification
 
 -(void)btnMove:(UIButton *)btn{
+    
     NSDictionary *dic =@{NSFontAttributeName:[UIFont systemFontOfSize:20]};
     
     float width=[btn.titleLabel.text sizeWithAttributes:dic].width;
     
     [UIView animateWithDuration:0.5 animations:^{
-//        _markimage.bounds =CGRectMake(0, 0, width, 3);
+       _markimage.bounds =CGRectMake(0, 0, width, 3);
         
         _markimage.center =CGPointMake(btn.center.x, 47.5);
         

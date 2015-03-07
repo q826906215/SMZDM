@@ -10,23 +10,19 @@
 
 @interface AllTableView : UIViewController<UITableViewDataSource,UITableViewDelegate>
 {
-    //->
-    @public
+//    //->
+//    @public
+//    
+//    UITableView         *_faborableTable;
+    UIScrollView * _scrollViewDown;
+    UIView *  _downView ;
+    int       _number;
     
-    UITableView         *_faborableTable;
-    UITableView         *_seaWashTable;
-    UITableView         *_findTable;
-    UITableView         *_baskTable;
-    UITableView         *_experienceTable;
-    UITableView         *_messageTable;
-    
-    NSMutableArray      *_dataArray;
-    
-}
+ }
 
 @property (nonatomic,retain)UITableView  *publicTable;
 
-//@property (nonatomic,)
+@property (nonatomic,retain)NSMutableArray * dataArray;
 
 
 

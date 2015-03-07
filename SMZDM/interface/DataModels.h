@@ -24,3 +24,6 @@
 #import "ExperienceBaseClass.h"
 #import "ExperienceRows.h"
 #import "ExperienceData.h"
+#import "BaskInContentBaseClass.h"
+#import "BaskInContentRows.h"
+#import "BaskInContentData.h"

@@ -17,4 +17,15 @@
 +(void)getFistPageHaiTaoDataCompletionBlock:(void (^)(NSDictionary *dic))block;
 +(void)getFistPageInformationDataCompletionBlock:(void (^)(NSDictionary *dic))block;
 
+
+//----------------日排行－－－－－－－－－－－－
+//+(void)getDayListSeaWashCompletionBlock:(void(^) (NSDictionary *dic))block ;
+//------不能用uibutton类型？
++(void)getDayListIndex:(NSInteger)sender
+       CompletionBlock:(void(^)(NSDictionary * dic))block ;
+
+
+
+
+
 @end

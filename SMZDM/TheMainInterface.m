@@ -267,7 +267,7 @@
         
         ScrollRows *rows =baseClass.data.rows[i];
         
-        NSLog(@"%@",rows.bannerPic);
+//        NSLog(@"%@",rows.bannerPic);
 
         UIImageView *imageView =[[UIImageView alloc]init];
         
@@ -347,7 +347,7 @@
     CGFloat x=scrollView.contentOffset.x;
     
     int index =x/320;
-    NSLog(@"%d",index);
+//    NSLog(@"%d",index);
     
     [articleClassification setContentOffset:CGPointMake(30*index, 0) animated:YES];
     
@@ -453,7 +453,7 @@
 -(void)btnMove:(UIButton *)btn{
     NSDictionary *dic =@{NSFontAttributeName:[UIFont systemFontOfSize:20]};
     
-    float width=[btn.titleLabel.text sizeWithAttributes:dic].width;
+//    float width=[btn.titleLabel.text sizeWithAttributes:dic].width;
     
     [UIView animateWithDuration:0.5 animations:^{
 //        _markimage.bounds =CGRectMake(0, 0, width, 3);

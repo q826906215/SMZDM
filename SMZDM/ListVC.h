@@ -10,8 +10,7 @@
 #import "AFNetworking.h"
 #import "YHcell.h"
 #import  "UIImageView+WebCache.h"
-@interface ListVC : UIViewController<UITableViewDataSource,UITableViewDelegate>
-{
+@interface ListVC : UIViewController{
     UITableView * _table;
     NSArray *  _dataArray;
 }

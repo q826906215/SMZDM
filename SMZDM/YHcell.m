@@ -39,7 +39,7 @@
         [self getViewYouHui];
          NSDictionary * dataDic = arr[indexPath];
          NSString * strPic =[dataDic  objectForKey:@"article_pic"];
-        [_leftImage  setImageWithURL:[NSURL URLWithString:strPic] ];
+        [_leftImage  sd_setImageWithURL:[NSURL URLWithString:strPic] ];
          _leftLab.text = [dataDic objectForKey:@"article_mall"];
         _rightLab.text =[dataDic objectForKey:@"article_format_date"];
         self.middleLab.text =[dataDic objectForKey:@"article_title"];
@@ -51,7 +51,7 @@
         [self getViewYouHui];
         NSDictionary * dataDic = arr[indexPath];
         NSString * strPic =[dataDic  objectForKey:@"article_pic"];
-        [_leftImage  setImageWithURL:[NSURL URLWithString:strPic] ];
+        [_leftImage  sd_setImageWithURL:[NSURL URLWithString:strPic] ];
         _leftLab.text = [dataDic objectForKey:@"article_mall"];
         _rightLab.text =[dataDic objectForKey:@"article_format_date"];
         self.middleLab.text =[dataDic objectForKey:@"article_title"];
@@ -64,7 +64,7 @@
         NSDictionary * dataDic = arr[indexPath*2];
          //--左边
          NSString * strPic =[dataDic  objectForKey:@"article_pic"];
-        [_leftImage  setImageWithURL:[NSURL URLWithString:strPic] ];
+        [_leftImage  sd_setImageWithURL:[NSURL URLWithString:strPic] ];
         _leftLab.text = [dataDic objectForKey:@"article_mall"];
         _rightLab.text =[dataDic objectForKey:@"article_format_date"];
         self.middleLab.text =[dataDic objectForKey:@"article_title"];
@@ -73,7 +73,7 @@
         // --右边
             NSDictionary * dataDic1= arr[indexPath*2+1];
             NSString * strPic1 =[dataDic1  objectForKey:@"article_pic"];
-            [_leftImageR  setImageWithURL:[NSURL URLWithString:strPic1] ];
+            [_leftImageR  sd_setImageWithURL:[NSURL URLWithString:strPic1] ];
             _leftLabR.text = [dataDic1 objectForKey:@"article_mall"];
             _rightLabR.text =[dataDic1 objectForKey:@"article_format_date"];
             self.middleLabR.text =[dataDic1 objectForKey:@"article_title"];
@@ -87,7 +87,7 @@
         
         NSDictionary * dataDic = arr[indexPath];
         NSString * strPic =[dataDic  objectForKey:@"article_pic"];
-        [_leftImage  setImageWithURL:[NSURL URLWithString:strPic]];
+        [_leftImage  sd_setImageWithURL:[NSURL URLWithString:strPic]];
         _userLab.text =[dataDic  objectForKey:@"article_referrals"];
         self.middleLab.text =[dataDic objectForKey:@"article_title"];
         self.downLab.text =[dataDic objectForKey:@"article_comment"];
@@ -100,7 +100,7 @@
         
         NSDictionary * dataDic = arr[indexPath];
         NSString * strPic =[dataDic  objectForKey:@"article_pic"];
-        [_leftImage  setImageWithURL:[NSURL URLWithString:strPic] ];
+        [_leftImage  sd_setImageWithURL:[NSURL URLWithString:strPic] ];
         _leftLab.text = [dataDic objectForKey:@"article_mall"];
         _rightLab.text =[dataDic objectForKey:@"article_format_date"];
         self.filterLab.text =[dataDic objectForKey:@"article_filter_content"];
@@ -118,7 +118,7 @@
         
         NSDictionary * dataDic = arr[indexPath];
         NSString * strPic =[dataDic  objectForKey:@"article_pic"];
-        [_leftImage  setImageWithURL:[NSURL URLWithString:strPic] ];
+        [_leftImage  sd_setImageWithURL:[NSURL URLWithString:strPic] ];
         _leftLab.text = [dataDic objectForKey:@"article_mall"];
         _rightLab.text =[dataDic objectForKey:@"article_format_date"];
         self.filterLab.text =[dataDic objectForKey:@"article_filter_content"];

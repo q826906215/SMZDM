@@ -176,7 +176,7 @@
         
     }];
     
-    preferential=[[UITableView alloc]initWithFrame:CGRectMake(320, 0, 320, 568)];
+    preferential=[[UITableView alloc]initWithFrame:CGRectMake(320, 0, 320, 454)];
     
     preferential.delegate =self;
     
@@ -204,7 +204,7 @@
         [haiTao reloadData];
     }];
     
-    haiTao=[[UITableView alloc]initWithFrame:CGRectMake(640, 0, 320, 568)];
+    haiTao=[[UITableView alloc]initWithFrame:CGRectMake(640, 0, 320, 454)];
     
     haiTao.delegate =self;
     
@@ -260,7 +260,7 @@
         [experience reloadData];
     }];
     
-    experience =[[UITableView alloc]initWithFrame:CGRectMake(1600, 0, 320, 568)];
+    experience =[[UITableView alloc]initWithFrame:CGRectMake(1600, 0, 320, 454)];
     
     experience.delegate =self;
     
@@ -288,7 +288,7 @@
         [information  reloadData];
         
     }];
-    information=[[UITableView alloc]initWithFrame:CGRectMake(1920, 0, 320, 568)];
+    information=[[UITableView alloc]initWithFrame:CGRectMake(1920, 0, 320, 454)];
     
     information.delegate =self;
     
@@ -399,7 +399,7 @@
 
 -(void)pageChanged:(UIPageControl *)sender{
     
-    int  currentIndex =sender.currentPage;
+    NSInteger  currentIndex =sender.currentPage;
     
     [hostInterfaceView setContentOffset:CGPointMake(currentIndex *320, 0) animated:YES];
     

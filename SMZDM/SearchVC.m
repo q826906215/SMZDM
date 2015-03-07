@@ -34,7 +34,7 @@
     
      _classBtn =[UIButton buttonWithType:UIButtonTypeCustom];
     [ _classBtn   setTitle:@"分类筛选" forState:UIControlStateNormal];
-    [ _classBtn   setTitleColor:[UIColor redColor] forState:UIControlStateNormal  ];
+    [ _classBtn   setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
     [ _classBtn   addTarget:self action:@selector(classClick) forControlEvents:UIControlEventTouchUpInside];
      _classBtn .frame =CGRectMake(20, 80, 80, 30) ;
     [self.view addSubview: _classBtn ];
@@ -98,26 +98,26 @@
 -(void)hotLable
 {
     _scrollView =[[UIScrollView alloc] init ];
-    _scrollView.frame = CGRectMake(0, 120, 375, 590);
-    _scrollView.contentSize =CGSizeMake(375, 880);
+    _scrollView.frame = CGRectMake(0, 120, 320, 448);
+    _scrollView.contentSize =CGSizeMake(320, 800);
     _scrollView.backgroundColor= [UIColor colorWithRed:0.9 green:0.9 blue:0.9 alpha:1];
     [self.view addSubview:_scrollView];
 
     CustomLine*view =[ CustomLine  new];
-    view.frame = CGRectMake(0, 0,375  , 800 );
+    view.frame = CGRectMake(0, 0,320, 800 );
     view.backgroundColor =[UIColor grayColor];
     [_scrollView addSubview:view];
     
     UILabel *hotLab =[[UILabel alloc] init];
     hotLab.text=@"热门标签";
     hotLab.textColor = [UIColor blackColor];
-    hotLab.frame=CGRectMake(30, 5, 80, 50);
-    [view addSubview:hotLab];
+    hotLab.frame=CGRectMake(20, 3, 80, 50);
+    [_scrollView addSubview:hotLab];
 
     UILabel *lable =[[UILabel alloc] init];
     lable.text=@"分类筛选" ;
     lable.textColor = [UIColor blackColor];
-    lable.frame=CGRectMake(30, 255, 80, 50);
+    lable.frame=CGRectMake(20, 255, 80, 50);
     [_scrollView addSubview:lable];
 
 
@@ -132,7 +132,7 @@
     for (int i= 0 ; i<15  ; i++) {
         float  row =  i / lie; //  1
         float  clume = i % lie; // 3 2 1 0
-        float   width = 375/3;
+        float   width = 320/3;
         float  height = 100;
         UIButton * optionBtn =[UIButton   buttonWithType:UIButtonTypeSystem];
         optionBtn.tag  =  i+20;
@@ -143,7 +143,7 @@
         [_scrollView  addSubview:optionBtn];
         
         UIImageView * imageV =[[UIImageView alloc] init];
-        imageV.frame= CGRectMake(50, 30, 25, 25);
+        imageV.frame= CGRectMake(40, 30, 25, 25);
         if (i <8 || i==8) {
              imageV.image= [UIImage imageNamed:[NSString stringWithFormat:@"ic_search_0%d@2x",i+1]];
         }
@@ -155,7 +155,8 @@
         
         NSArray * array =@[@"电脑数码",@"家用电器",@"运动户外",@"服饰鞋包",@"个护化妆",@"母婴用品",@"日用百货",@"食品保健",@"礼品钟表",@"图书音像",@"玩模乐器",@"办公设备",@"家具家装",@"汽车用品",@"其他分类"];
         UILabel * lab =[[UILabel alloc]init];
-        lab.frame = CGRectMake(30, 70, 80, 30);
+        lab.frame = CGRectMake(15, 70, 80, 30);
+        lab.textAlignment =NSTextAlignmentCenter;
         lab.text=[array objectAtIndex:i];
         lab.textColor = [UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:1];
         [optionBtn addSubview:lab];
@@ -168,7 +169,7 @@
     for (int i= 0 ; i<4  ; i++) {
         float  row =  i / lie; //  1
         float  clume = i % lie; // 3 2 1 0
-        float   width = 375/3;
+        float   width = 320/3;
         float  height = 100;
         UIButton * optionBtn =[UIButton   buttonWithType:UIButtonTypeSystem];
         optionBtn.tag  =  i+ 10;
@@ -179,13 +180,14 @@
         [_scrollView  addSubview:optionBtn];
         
         UIImageView * imageV =[[UIImageView alloc] init];
-        imageV.frame= CGRectMake(50, 30, 25, 25);
+        imageV.frame= CGRectMake(40, 30, 25, 25);
         imageV.image= [UIImage imageNamed:[NSString stringWithFormat:@"%d@2x",i+1]];
         [optionBtn addSubview:imageV];
         
         NSArray * array =@[@"排行榜",@"白菜党",@"神价格",@"奇葩物"];
         UILabel * lab =[[UILabel alloc]init];
-        lab.frame = CGRectMake(40, 70, 60, 30);
+        lab.frame = CGRectMake(23, 70, 60, 30);
+        lab.textAlignment =NSTextAlignmentCenter;
         lab.text=[array objectAtIndex:i];
         lab.textColor = [UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:1];
         [optionBtn addSubview:lab];

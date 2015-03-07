@@ -227,7 +227,7 @@
 		12A320E11AA75D2C00256CC9 /* intro_ip5_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = intro_ip5_btn.png; path = ../intro_ip5_btn.png; sourceTree = "<group>"; };
 		12A320E31AA7657700256CC9 /* TheMainInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TheMainInterface.h; sourceTree = "<group>"; };
 		12A320E41AA7657800256CC9 /* TheMainInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TheMainInterface.m; sourceTree = "<group>"; };
-		12B589A31AAB288500E2E163 /* icon@2x-5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x-5.png"; sourceTree = "<group>"; };
+		12B589A31AAB288500E2E163 /* icon@2x-5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x-5.png"; path = "../icon@2x-5.png"; sourceTree = "<group>"; };
 		12D39D3D1AA84459000D783C /* TheListOf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TheListOf.h; sourceTree = "<group>"; };
 		12D39D3E1AA84459000D783C /* TheListOf.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TheListOf.m; sourceTree = "<group>"; };
 		12D39DB51AA89E6E000D783C /* SelectBaseClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectBaseClass.h; sourceTree = "<group>"; };
@@ -351,9 +351,23 @@
 			path = Experience;
 			sourceTree = "<group>";
 		};
+		124B50081AAB6349007656F4 /* TableViewcell */ = {
+			isa = PBXGroup;
+			children = (
+				12D39D3D1AA84459000D783C /* TheListOf.h */,
+				12D39D3E1AA84459000D783C /* TheListOf.m */,
+				1289398F1AAAE44E00CB6220 /* BaskInContentCell.h */,
+				128939901AAAE44E00CB6220 /* BaskInContentCell.m */,
+				121D73FB1AA9AF7E008A9CBF /* TheListViewCell.h */,
+				121D73FC1AA9AF7E008A9CBF /* TheListViewCell.m */,
+			);
+			name = TableViewcell;
+			sourceTree = "<group>";
+		};
 		125C4E4B1AA953DA009C1118 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				12B589A31AAB288500E2E163 /* icon@2x-5.png */,
 				12A320D91AA74FF500256CC9 /* intro_ip5_1.png */,
 				12A320DA1AA74FF500256CC9 /* intro_ip5_2.png */,
 				12A320DB1AA74FF500256CC9 /* intro_ip5_3.png */,
@@ -471,13 +485,7 @@
 				12A320BE1AA7449700256CC9 /* AppDelegate.m */,
 				12A320E31AA7657700256CC9 /* TheMainInterface.h */,
 				12A320E41AA7657800256CC9 /* TheMainInterface.m */,
-				12B589A31AAB288500E2E163 /* icon@2x-5.png */,
-				12D39D3D1AA84459000D783C /* TheListOf.h */,
-				12D39D3E1AA84459000D783C /* TheListOf.m */,
-				1289398F1AAAE44E00CB6220 /* BaskInContentCell.h */,
-				128939901AAAE44E00CB6220 /* BaskInContentCell.m */,
-				121D73FB1AA9AF7E008A9CBF /* TheListViewCell.h */,
-				121D73FC1AA9AF7E008A9CBF /* TheListViewCell.m */,
+				124B50081AAB6349007656F4 /* TableViewcell */,
 				095201FF1AA9DD4A00A12CBC /* Sorting */,
 				095202061AA9DDC600A12CBC /* DayList */,
 				125C4E4B1AA953DA009C1118 /* Image */,

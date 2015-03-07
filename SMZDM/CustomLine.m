@@ -55,12 +55,12 @@
      CGContextFillRect(context, CGRectMake(0 ,800, rect.size.width, 1));
     //--竖线
     
-     CGContextFillRect(context, CGRectMake(375/3 ,50, 1, 200));
-    CGContextFillRect(context, CGRectMake(2*375/3 ,50, 1, 200));
+     CGContextFillRect(context, CGRectMake(320/3 ,50, 1, 200));
+    CGContextFillRect(context, CGRectMake(2*320/3 ,50, 1, 200));
     
     
-    CGContextFillRect(context, CGRectMake(375/3 ,300, 1, 500));
-    CGContextFillRect(context, CGRectMake(2*375/3 ,300, 1, 500));
+    CGContextFillRect(context, CGRectMake(330/3 ,300, 1, 500));
+    CGContextFillRect(context, CGRectMake(2*320/3 ,300, 1, 500));
     
 }
 

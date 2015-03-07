@@ -7,10 +7,10 @@
 //
 
 #import "TheMainInterface.h"
-#import "AFNetworking.h"
+#import <AFNetworking.h>
 #import "TheListOf.h"
 #import "TheListViewCell.h"
-#import "UIImageView+WebCache.h"
+#import <UIImageView+WebCache.h>
 #import "NetworkTool.h"
 #import "SearchVC.h"
 

@@ -46,7 +46,7 @@
     
     [manger GET:encodedString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
-//        NSLog(@"----------%@",responseObject);
+        NSLog(@"----------%@",responseObject);
         
         NSDictionary *dic =responseObject;
         
@@ -105,7 +105,7 @@
     NSString *encodedString =(NSString *)CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault, (CFStringRef)urlString, NULL,NULL,kCFStringEncodingUTF8);
     
     [manager GET:encodedString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"%@",responseObject );
+//        NSLog(@"%@",responseObject );
         
         NSDictionary *dic=responseObject;
         

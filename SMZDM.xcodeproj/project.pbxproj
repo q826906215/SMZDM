@@ -89,6 +89,7 @@
 		12A320E01AA74FF500256CC9 /* intro_ip5_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 12A320DC1AA74FF500256CC9 /* intro_ip5_4.png */; };
 		12A320E21AA75D2C00256CC9 /* intro_ip5_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 12A320E11AA75D2C00256CC9 /* intro_ip5_btn.png */; };
 		12A320E51AA7657800256CC9 /* TheMainInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 12A320E41AA7657800256CC9 /* TheMainInterface.m */; };
+		12B589A41AAB288500E2E163 /* icon@2x-5.png in Resources */ = {isa = PBXBuildFile; fileRef = 12B589A31AAB288500E2E163 /* icon@2x-5.png */; };
 		12D39D3F1AA84459000D783C /* TheListOf.m in Sources */ = {isa = PBXBuildFile; fileRef = 12D39D3E1AA84459000D783C /* TheListOf.m */; };
 		12D39DBB1AA89E6E000D783C /* SelectBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 12D39DB61AA89E6E000D783C /* SelectBaseClass.m */; };
 		12D39DBC1AA89E6E000D783C /* SelectData.m in Sources */ = {isa = PBXBuildFile; fileRef = 12D39DB81AA89E6E000D783C /* SelectData.m */; };
@@ -223,6 +224,7 @@
 		12A320E11AA75D2C00256CC9 /* intro_ip5_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = intro_ip5_btn.png; path = ../intro_ip5_btn.png; sourceTree = "<group>"; };
 		12A320E31AA7657700256CC9 /* TheMainInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TheMainInterface.h; sourceTree = "<group>"; };
 		12A320E41AA7657800256CC9 /* TheMainInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TheMainInterface.m; sourceTree = "<group>"; };
+		12B589A31AAB288500E2E163 /* icon@2x-5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x-5.png"; sourceTree = "<group>"; };
 		12D39D3D1AA84459000D783C /* TheListOf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TheListOf.h; sourceTree = "<group>"; };
 		12D39D3E1AA84459000D783C /* TheListOf.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TheListOf.m; sourceTree = "<group>"; };
 		12D39DB51AA89E6E000D783C /* SelectBaseClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectBaseClass.h; sourceTree = "<group>"; };
@@ -261,9 +263,9 @@
 			isa = PBXGroup;
 			children = (
 				095202001AA9DD6C00A12CBC /* SearchVC.h */,
+				095202031AA9DD7D00A12CBC /* SearchVC.m */,
 				095202011AA9DD7D00A12CBC /* CustomLine.h */,
 				095202021AA9DD7D00A12CBC /* CustomLine.m */,
-				095202031AA9DD7D00A12CBC /* SearchVC.m */,
 			);
 			name = Sorting;
 			sourceTree = "<group>";
@@ -463,6 +465,7 @@
 				12A320BE1AA7449700256CC9 /* AppDelegate.m */,
 				12A320E31AA7657700256CC9 /* TheMainInterface.h */,
 				12A320E41AA7657800256CC9 /* TheMainInterface.m */,
+				12B589A31AAB288500E2E163 /* icon@2x-5.png */,
 				121D73EC1AA97469008A9CBF /* AllTools */,
 				12D39D3D1AA84459000D783C /* TheListOf.h */,
 				12D39D3E1AA84459000D783C /* TheListOf.m */,
@@ -631,6 +634,7 @@
 				095202361AA9DF1C00A12CBC /* ic_search_07@2x.png in Resources */,
 				0952023E1AA9DF1C00A12CBC /* ic_search_15@2x.png in Resources */,
 				128939771AAAE15F00CB6220 /* ic_search_06@2x.png in Resources */,
+				12B589A41AAB288500E2E163 /* icon@2x-5.png in Resources */,
 				128939721AAAE15F00CB6220 /* ic_search_01@2x.png in Resources */,
 				12A320C41AA7449700256CC9 /* LaunchScreen.xib in Resources */,
 				1289397C1AAAE15F00CB6220 /* ic_search_11@2x.png in Resources */,

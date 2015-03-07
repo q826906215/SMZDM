@@ -36,8 +36,6 @@
     UIBarButtonItem * leftItem =[[UIBarButtonItem alloc] initWithCustomView:leftButton];
     self.navigationItem.leftBarButtonItem=leftItem;
     
-
-    
     [self.navigationController.navigationBar setBackgroundImage:[UIImage alloc] forBarMetrics:UIBarMetricsDefault];
     
     self.navigationController.navigationBar.shadowImage=[[UIImage alloc]init];
@@ -48,8 +46,6 @@
     
     [self.view addSubview:view];
     
-    [view release];
-    
     [NetworkTool getFistPageScrollImageDataCompletionBlock:^(NSDictionary *dic) {
         
         baseClass =[ScrollBaseClass modelObjectWithDictionary:dic];
@@ -57,15 +53,13 @@
         [self  Classification];
     }];
     
-    
+    [view release];
 }
 
 -(void)searchShop
 {
     SearchVC * svc =[[SearchVC alloc] init];
     [self presentViewController:svc animated:YES completion:nil];
-    
-    
 }
 -(void)Classification{
     
@@ -92,7 +86,7 @@
     
     for (int i=0; i<7; i++) {
         
-        UIButton *ification=[UIButton buttonWithType:UIButtonTypeRoundedRect];
+        ification=[UIButton buttonWithType:UIButtonTypeRoundedRect];
         
         ification.frame =CGRectMake(i*70, 0, 70, 50);
         
@@ -154,7 +148,7 @@
         
     }];
     
-    showTable =[[UITableView alloc]initWithFrame:CGRectMake(0, 0, 320, 568)];
+    showTable =[[UITableView alloc]initWithFrame:CGRectMake(0, 0, 320, 454)];
     
     showTable.delegate =self;
     
@@ -168,6 +162,12 @@
     
     [hostInterface addSubview:showTable];
     
+    refreshControl=[[UIRefreshControl alloc]init];
+    
+    [refreshControl addTarget:self action:@selector(refresshNowBlog) forControlEvents:UIControlEventValueChanged];
+
+    [showTable addSubview:refreshControl];
+
     [NetworkTool getFistPagePreferentialDataCompletionBlock:^(NSDictionary *dic){
         
         preferentialClass =[preferentialBaseClass modelObjectWithDictionary:dic];
@@ -192,6 +192,12 @@
     
     [self selectedColumnsScrollView];
     
+    refreshControl1=[[UIRefreshControl alloc]init];
+    
+    [refreshControl1 addTarget:self action:@selector(preferential) forControlEvents:UIControlEventValueChanged];
+    
+    [preferential addSubview:refreshControl1];
+    
     [NetworkTool getFistPageHaiTaoDataCompletionBlock:^(NSDictionary *dic) {
         haiTaoClass =[HaiTaoBaseClass modelObjectWithDictionary:dic];
         
@@ -211,6 +217,12 @@
     [haiTao registerClass:[TheListOf class] forCellReuseIdentifier:@"haitao"];
     
     [hostInterface addSubview:haiTao];
+    
+    refreshControl2=[[UIRefreshControl alloc]init];
+    
+    [refreshControl2 addTarget:self action:@selector(refresshHowBlog) forControlEvents:UIControlEventValueChanged];
+    
+    [haiTao addSubview:refreshControl2];
     
     [NetworkTool getFistPageBaskInContentDataCompletionBlock:^(NSDictionary *dic) {
         
@@ -234,6 +246,13 @@
     baskinContent.tag =104;
     
     [hostInterface addSubview:baskinContent];
+    
+    refreshControl4=[[UIRefreshControl alloc]init];
+    
+    [refreshControl4 addTarget:self action:@selector(refresshXowBlog) forControlEvents:UIControlEventValueChanged];
+    
+    [baskinContent addSubview:refreshControl4];
+
 
     [NetworkTool getFistPageExperienceDataCompletionBlock:^(NSDictionary *dic) {
         experienceCless =[ExperienceBaseClass modelObjectWithDictionary:dic];
@@ -254,6 +273,13 @@
     [experience  registerClass:[TheListViewCell class] forCellReuseIdentifier:@"experience"];
     
     [hostInterface addSubview:experience];
+    
+    refreshControl5=[[UIRefreshControl alloc]init];
+    
+    [refreshControl5 addTarget:self action:@selector(refresshCowBlog) forControlEvents:UIControlEventValueChanged];
+    
+    [experience addSubview:refreshControl5];
+
     
     [NetworkTool getFistPageInformationDataCompletionBlock:^(NSDictionary *dic) {
         
@@ -276,9 +302,12 @@
     
     [hostInterface addSubview:information];
     
+    refreshControl6=[[UIRefreshControl alloc]init];
     
+    [refreshControl6 addTarget:self action:@selector(refresshDowBlog) forControlEvents:UIControlEventValueChanged];
     
-    
+    [information addSubview:refreshControl6];
+
     [self selectedColumnsScrollView];
     
     [showTable release];
@@ -290,7 +319,6 @@
     [haiTao release];
     
 }
-
 #pragma mark-ScrollViewPageControl
 
 -(void)selectedColumnsScrollView{
@@ -304,7 +332,7 @@
     
     hostInterfaceView.alwaysBounceHorizontal =YES;
     
-    hostInterfaceView.showsHorizontalScrollIndicator =NO;
+    hostInterfaceView.showsHorizontalScrollIndicator =YES;
     
     hostInterfaceView.bounces=YES;
     
@@ -346,7 +374,7 @@
     
     [showTable addSubview:pageControl];
     
-//    [pageControl release];
+    [pageControl release];
     
     [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(onTheWay) userInfo:Nil repeats:YES];
     
@@ -358,7 +386,7 @@
     
     [hostInterfaceView setContentOffset:CGPointMake(offsetx, 0) animated:YES];
     
-    if (offsetx == 1280) {
+    if (offsetx == 1600) {
         yyy=-yyy;
     }
     if (offsetx == 0) {
@@ -395,6 +423,12 @@
     {
         
         NSLog(@"%d",index);
+        
+        CGFloat x=scrollView.contentOffset.x;
+        
+        int index =x/320;
+        
+        pageControl.currentPage =index;
         
         [articleClassification setContentOffset:CGPointMake(30*index, 0) animated:YES];
         
@@ -584,7 +618,115 @@
     [hostInterface setContentOffset:CGPointMake(320*btn.tag, 0)animated:YES];
 }
 
+#pragma mark -refreshControl
 
+-(void)refresshNowBlog{
+    [refreshControl beginRefreshing];
+    
+    [NetworkTool getFistPageSelectDataCompletionBlock:^(NSDictionary *dic) {
+            selectClass =[SelectBaseClass modelObjectWithDictionary:dic];
+        [showTable reloadData];
+    }];
+    double delayInSeconds = 4.0;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        
+        [refreshControl endRefreshing];
+    });
+}
+     
+-(void)preferential{
+    
+    [refreshControl1 beginRefreshing];
+
+    [NetworkTool getFistPagePreferentialDataCompletionBlock:^(NSDictionary *dic){
+        
+        preferentialClass =[preferentialBaseClass modelObjectWithDictionary:dic];
+        
+        [preferential reloadData];
+    }];
+    double delayInSeconds = 4.0;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        
+        [refreshControl1 endRefreshing];
+    });
+}
+
+-(void)refresshHowBlog{
+    [refreshControl2 beginRefreshing];
+    
+    [NetworkTool getFistPageHaiTaoDataCompletionBlock:^(NSDictionary *dic) {
+        haiTaoClass =[HaiTaoBaseClass modelObjectWithDictionary:dic];
+        
+        [haiTao reloadData];
+    }];
+    double delayInSeconds = 4.0;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        
+        [refreshControl2 endRefreshing];
+    });
+}
+
+-(void)refresshZowBlog{
+    [refreshControl3 beginRefreshing];
+    double delayInSeconds = 4.0;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        
+        [refreshControl3 endRefreshing];
+    });
+    
+}
+-(void)refresshXowBlog{
+    [refreshControl4 beginRefreshing];
+    
+    [NetworkTool getFistPageBaskInContentDataCompletionBlock:^(NSDictionary *dic) {
+        
+        contentCless = [BaskInContentBaseClass modelObjectWithDictionary:dic];
+        
+        [baskinContent reloadData];
+    }];
+    double delayInSeconds = 4.0;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        
+        [refreshControl4 endRefreshing];
+    });
+}
+-(void)refresshCowBlog{
+    [refreshControl5 beginRefreshing];
+    
+    [NetworkTool getFistPageExperienceDataCompletionBlock:^(NSDictionary *dic) {
+        experienceCless =[ExperienceBaseClass modelObjectWithDictionary:dic];
+        
+        [experience reloadData];
+    }];
+    double delayInSeconds = 4.0;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        
+        [refreshControl5 endRefreshing];
+    });
+}
+-(void)refresshDowBlog{
+    [refreshControl6 beginRefreshing];
+    
+    [NetworkTool getFistPageInformationDataCompletionBlock:^(NSDictionary *dic) {
+        
+        informationClass =[InformationBaseClass modelObjectWithDictionary:dic];
+        
+        [information  reloadData];
+        
+    }];
+    double delayInSeconds = 4.0;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        
+        [refreshControl6 endRefreshing];
+    });
+}
 -(void)dealloc{
     [super dealloc];
 }

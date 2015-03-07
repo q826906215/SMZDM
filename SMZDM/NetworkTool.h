@@ -14,6 +14,7 @@
 +(void)getFistPageSelectDataCompletionBlock:(void (^)(NSDictionary *dic))block;
 +(void)getFistPagePreferentialDataCompletionBlock:(void (^)(NSDictionary *dic))block;
 +(void)getFistPageHaiTaoDataCompletionBlock:(void (^)(NSDictionary *dic))block;
++(void)getFistPageBaskInContentDataCompletionBlock:(void (^)(NSDictionary *dic))block;
 +(void)getFistPageExperienceDataCompletionBlock:(void (^)(NSDictionary *dic))block;
 +(void)getFistPageInformationDataCompletionBlock:(void (^)(NSDictionary *dic))block;
 

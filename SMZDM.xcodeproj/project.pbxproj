@@ -74,6 +74,10 @@
 		128939801AAAE15F00CB6220 /* ic_search_15@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 128939701AAAE15F00CB6220 /* ic_search_15@2x.png */; };
 		128939831AAAE16600CB6220 /* ic_search@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 128939811AAAE16600CB6220 /* ic_search@2x.png */; };
 		128939841AAAE16600CB6220 /* ic_xq_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 128939821AAAE16600CB6220 /* ic_xq_back@2x.png */; };
+		1289398C1AAAE40000CB6220 /* BaskInContentBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 128939871AAAE40000CB6220 /* BaskInContentBaseClass.m */; };
+		1289398D1AAAE40000CB6220 /* BaskInContentData.m in Sources */ = {isa = PBXBuildFile; fileRef = 128939891AAAE40000CB6220 /* BaskInContentData.m */; };
+		1289398E1AAAE40000CB6220 /* BaskInContentRows.m in Sources */ = {isa = PBXBuildFile; fileRef = 1289398B1AAAE40000CB6220 /* BaskInContentRows.m */; };
+		128939911AAAE44E00CB6220 /* BaskInContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 128939901AAAE44E00CB6220 /* BaskInContentCell.m */; };
 		12A320BC1AA7449700256CC9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 12A320BB1AA7449700256CC9 /* main.m */; };
 		12A320BF1AA7449700256CC9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 12A320BE1AA7449700256CC9 /* AppDelegate.m */; };
 		12A320C11AA7449700256CC9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12A320C01AA7449700256CC9 /* Images.xcassets */; };
@@ -194,6 +198,14 @@
 		128939701AAAE15F00CB6220 /* ic_search_15@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_search_15@2x.png"; sourceTree = "<group>"; };
 		128939811AAAE16600CB6220 /* ic_search@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_search@2x.png"; sourceTree = "<group>"; };
 		128939821AAAE16600CB6220 /* ic_xq_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_xq_back@2x.png"; sourceTree = "<group>"; };
+		128939861AAAE40000CB6220 /* BaskInContentBaseClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaskInContentBaseClass.h; sourceTree = "<group>"; };
+		128939871AAAE40000CB6220 /* BaskInContentBaseClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaskInContentBaseClass.m; sourceTree = "<group>"; };
+		128939881AAAE40000CB6220 /* BaskInContentData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaskInContentData.h; sourceTree = "<group>"; };
+		128939891AAAE40000CB6220 /* BaskInContentData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaskInContentData.m; sourceTree = "<group>"; };
+		1289398A1AAAE40000CB6220 /* BaskInContentRows.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaskInContentRows.h; sourceTree = "<group>"; };
+		1289398B1AAAE40000CB6220 /* BaskInContentRows.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaskInContentRows.m; sourceTree = "<group>"; };
+		1289398F1AAAE44E00CB6220 /* BaskInContentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaskInContentCell.h; sourceTree = "<group>"; };
+		128939901AAAE44E00CB6220 /* BaskInContentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaskInContentCell.m; sourceTree = "<group>"; };
 		12A320B61AA7449600256CC9 /* SMZDM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SMZDM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12A320BA1AA7449700256CC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		12A320BB1AA7449700256CC9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -404,6 +416,19 @@
 			path = interface;
 			sourceTree = "<group>";
 		};
+		128939851AAAE40000CB6220 /* BaskInContent */ = {
+			isa = PBXGroup;
+			children = (
+				128939861AAAE40000CB6220 /* BaskInContentBaseClass.h */,
+				128939871AAAE40000CB6220 /* BaskInContentBaseClass.m */,
+				128939881AAAE40000CB6220 /* BaskInContentData.h */,
+				128939891AAAE40000CB6220 /* BaskInContentData.m */,
+				1289398A1AAAE40000CB6220 /* BaskInContentRows.h */,
+				1289398B1AAAE40000CB6220 /* BaskInContentRows.m */,
+			);
+			path = BaskInContent;
+			sourceTree = "<group>";
+		};
 		12A320AD1AA7449600256CC9 = {
 			isa = PBXGroup;
 			children = (
@@ -431,6 +456,7 @@
 				12D39DB41AA89E6E000D783C /* Select */,
 				121D73DF1AA97439008A9CBF /* preferential */,
 				121D73EE1AA985D7008A9CBF /* HaiTao */,
+				128939851AAAE40000CB6220 /* BaskInContent */,
 				121D74091AA9F26E008A9CBF /* Experience */,
 				121D73FE1AA9C878008A9CBF /* information */,
 				12A320BD1AA7449700256CC9 /* AppDelegate.h */,
@@ -440,6 +466,8 @@
 				121D73EC1AA97469008A9CBF /* AllTools */,
 				12D39D3D1AA84459000D783C /* TheListOf.h */,
 				12D39D3E1AA84459000D783C /* TheListOf.m */,
+				1289398F1AAAE44E00CB6220 /* BaskInContentCell.h */,
+				128939901AAAE44E00CB6220 /* BaskInContentCell.m */,
 				121D73FB1AA9AF7E008A9CBF /* TheListViewCell.h */,
 				121D73FC1AA9AF7E008A9CBF /* TheListViewCell.m */,
 				095201FF1AA9DD4A00A12CBC /* Sorting */,
@@ -709,15 +737,19 @@
 				121D74071AA9C878008A9CBF /* InformationData.m in Sources */,
 				0952020E1AA9DDFD00A12CBC /* YHcell.m in Sources */,
 				12D39D3F1AA84459000D783C /* TheListOf.m in Sources */,
+				1289398C1AAAE40000CB6220 /* BaskInContentBaseClass.m in Sources */,
 				121D74061AA9C878008A9CBF /* InformationBaseClass.m in Sources */,
 				121D73F61AA985D7008A9CBF /* HaiTaoData.m in Sources */,
 				12D39DBC1AA89E6E000D783C /* SelectData.m in Sources */,
 				1276842C1AA78FEE00B09810 /* ScrollRows.m in Sources */,
 				1276842B1AA78FEE00B09810 /* ScrollData.m in Sources */,
+				1289398E1AAAE40000CB6220 /* BaskInContentRows.m in Sources */,
 				121D74101AA9F26E008A9CBF /* ExperienceBaseClass.m in Sources */,
+				128939911AAAE44E00CB6220 /* BaskInContentCell.m in Sources */,
 				12A320BC1AA7449700256CC9 /* main.m in Sources */,
 				121D73F51AA985D7008A9CBF /* HaiTaoBaseClass.m in Sources */,
 				121D74121AA9F26E008A9CBF /* ExperienceRows.m in Sources */,
+				1289398D1AAAE40000CB6220 /* BaskInContentData.m in Sources */,
 				121D73EB1AA97439008A9CBF /* preferentialRows.m in Sources */,
 				0952020F1AA9DDFD00A12CBC /* AllTableView.m in Sources */,
 				0952020D1AA9DDFD00A12CBC /* ListVC.m in Sources */,

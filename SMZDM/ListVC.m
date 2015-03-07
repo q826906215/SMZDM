@@ -137,7 +137,7 @@
     
     NSDictionary * dataDic =  _dataArray[indexPath.row];
     NSString * strPic =[dataDic  objectForKey:@"article_pic"];
-    [cell.leftImage  setImageWithURL:[NSURL URLWithString:strPic] ];
+    [cell.leftImage  sd_setImageWithURL:[NSURL URLWithString:strPic] ];
     cell.leftLab.text = [dataDic objectForKey:@"article_mall"];
     cell.rightLab.text =[dataDic objectForKey:@"article_format_date"];
     cell.middleLab.text =[dataDic objectForKey:@"article_title"];

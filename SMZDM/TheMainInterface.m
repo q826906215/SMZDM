@@ -13,6 +13,7 @@
 #import <UIImageView+WebCache.h>
 #import "NetworkTool.h"
 #import "SearchVC.h"
+#import "BaskInContentCell.h"
 
 
 
@@ -96,6 +97,8 @@
         ification.frame =CGRectMake(i*70, 0, 70, 50);
         
         ification.tag =i;
+        
+        ification .alpha=0.6;
         
         [ification setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         
@@ -209,8 +212,29 @@
     
     [hostInterface addSubview:haiTao];
     
+    [NetworkTool getFistPageBaskInContentDataCompletionBlock:^(NSDictionary *dic) {
+        
+        contentCless = [BaskInContentBaseClass modelObjectWithDictionary:dic];
+        
+        [baskinContent reloadData];
+    }];
     
+    baskinContent =[[UITableView alloc]initWithFrame:CGRectMake(1280, 0, 320, 454)];
     
+    baskinContent.delegate =self;
+    
+    baskinContent.dataSource =self ;
+    
+    baskinContent.separatorStyle =NO;
+    
+    [baskinContent registerClass:[BaskInContentCell class] forCellReuseIdentifier:@"baskin"];
+    
+    baskinContent.rowHeight =180;
+    
+    baskinContent.tag =104;
+    
+    [hostInterface addSubview:baskinContent];
+
     [NetworkTool getFistPageExperienceDataCompletionBlock:^(NSDictionary *dic) {
         experienceCless =[ExperienceBaseClass modelObjectWithDictionary:dic];
         
@@ -302,7 +326,7 @@
         
         [hostInterfaceView addSubview:imageView];
         
-        [imageView setImageWithURL:[NSURL URLWithString:rows.bannerPic]];
+        [imageView sd_setImageWithURL:[NSURL URLWithString:rows.bannerPic]];
         
         [imageView release];
         
@@ -322,7 +346,7 @@
     
     [showTable addSubview:pageControl];
     
-    [pageControl release];
+//    [pageControl release];
     
     [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(onTheWay) userInfo:Nil repeats:YES];
     
@@ -351,31 +375,25 @@
     
     [hostInterfaceView setContentOffset:CGPointMake(currentIndex *320, 0) animated:YES];
     
-    offsetx+=yyy;
-    
-    [hostInterface setContentOffset:CGPointMake(offsetx, 0) animated:YES];
-    
-    if (offsetx == 2240) {
-        yyy+=yyy;
-    }
-    if (offsetx == 0) {
-        yyy=320;
-    }
-    [articleClassification setContentOffset:CGPointMake(offsetx/70, 0)animated:YES];
-
     
 }
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
-{ 
+{
+    
+    
+    CGFloat x=scrollView.contentOffset.x;
+    
+    int index =x/320;
+    
+    pageControl.currentPage =index;
+    
     if (scrollView==articleClassification)
     {
         return;
     }
     if (scrollView==hostInterface)
     {
-        CGFloat x=scrollView.contentOffset.x;
         
-        int index =x/320;
         NSLog(@"%d",index);
         
         [articleClassification setContentOffset:CGPointMake(30*index, 0) animated:YES];
@@ -383,8 +401,6 @@
         NSDictionary *dic =@{NSFontAttributeName:[UIFont systemFontOfSize:20]};
         
         float width=[@"色魔" sizeWithAttributes:dic].width;
-        
-        pageControl.currentPage =index;
         
         [UIView animateWithDuration:0.5 animations:^{
             _markimage.bounds =CGRectMake(0, 0, width, 3);
@@ -408,7 +424,7 @@
     }else if(tableView.tag == 103){
         return haiTaoClass.data.rows.count;
     }else if(tableView.tag == 104){
-        return haiTaoClass.data.rows.count;
+        return contentCless.data.rows.count;
     }else if(tableView.tag == 105){
         return experienceCless.data.rows.count;
     }else if(tableView.tag == 106){
@@ -423,7 +439,7 @@
     if (tableView.tag == 100) {
         TheListOf *cell =(TheListOf *)[tableView dequeueReusableCellWithIdentifier:@"normal" forIndexPath:indexPath];
         
-        [cell.headerImageView setImageWithURL:[NSURL URLWithString:[[selectClass.data.rows objectAtIndex:indexPath.row]articlePic]]];
+        [cell.headerImageView sd_setImageWithURL:[NSURL URLWithString:[[selectClass.data.rows objectAtIndex:indexPath.row]articlePic]]];
         
         cell.label.text=[[selectClass.data.rows objectAtIndex:indexPath.row]articleChannelName];
         
@@ -443,7 +459,7 @@
         
         TheListOf *cell =(TheListOf *)[tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
         
-        [cell.headerImageView setImageWithURL:[NSURL URLWithString:[[preferentialClass.data.rows objectAtIndex:indexPath.row]articlePic]]];
+        [cell.headerImageView sd_setImageWithURL:[NSURL URLWithString:[[preferentialClass.data.rows objectAtIndex:indexPath.row]articlePic]]];
         
         cell.label.text=[[preferentialClass.data.rows objectAtIndex:indexPath.row]articleMall];
         
@@ -463,7 +479,7 @@
         
         TheListOf *cell =(TheListOf *)[tableView dequeueReusableCellWithIdentifier:@"haitao" forIndexPath:indexPath];
         
-        [cell.headerImageView setImageWithURL:[NSURL URLWithString:[[haiTaoClass.data.rows objectAtIndex:indexPath.row]articlePic]]];
+        [cell.headerImageView sd_setImageWithURL:[NSURL URLWithString:[[haiTaoClass.data.rows objectAtIndex:indexPath.row]articlePic]]];
         
         cell.label.text=[[haiTaoClass.data.rows objectAtIndex:indexPath.row]articleMall];
         
@@ -486,15 +502,27 @@
         
         
     }else if (tableView.tag == 104){
-        TheListViewCell *cell =(TheListViewCell *)[tableView dequeueReusableCellWithIdentifier:@"information"forIndexPath:indexPath];
+        BaskInContentCell *cell =(BaskInContentCell *)[tableView dequeueReusableCellWithIdentifier:@"baskin"forIndexPath:indexPath];
+        [cell.headerImageView sd_setImageWithURL:[NSURL URLWithString:[[contentCless.data.rows objectAtIndex:indexPath.row]articlePic]]];
+        
+        [cell.ImageViewto sd_setImageWithURL:[NSURL URLWithString:[[contentCless.data.rows objectAtIndex:indexPath.row]articleAvatar]]];
+        
+        cell.rightLabel.text =[[contentCless.data.rows objectAtIndex:indexPath.row]articleReferrals];
+        
+        cell.redLabel.text =[[contentCless.data.rows objectAtIndex:indexPath.row]articleTitle];
+        
+        cell.iImageView.image=[UIImage imageNamed:@"ic_no_comment@2x.png"];
+        
+        cell.nextLabel.text =[[contentCless.data.rows objectAtIndex:indexPath.row]articleComment];
         
         return cell;
+
         
     }else if (tableView.tag == 105){
         
         TheListViewCell *cell =(TheListViewCell *)[tableView dequeueReusableCellWithIdentifier:@"experience"forIndexPath:indexPath];
         
-        [cell.headerImageView setImageWithURL:[NSURL URLWithString:[[experienceCless.data.rows objectAtIndex:indexPath.row]articlePic]]];
+        [cell.headerImageView sd_setImageWithURL:[NSURL URLWithString:[[experienceCless.data.rows objectAtIndex:indexPath.row]articlePic]]];
         
         cell.label.text=[[experienceCless.data.rows objectAtIndex:indexPath.row]articleReferrals];
         
@@ -514,7 +542,7 @@
         
         TheListViewCell *cell =(TheListViewCell *)[tableView dequeueReusableCellWithIdentifier:@"information"forIndexPath:indexPath];
         
-        [cell.headerImageView setImageWithURL:[NSURL URLWithString:[[informationClass.data.rows objectAtIndex:indexPath.row]articlePic]]];
+        [cell.headerImageView sd_setImageWithURL:[NSURL URLWithString:[[informationClass.data.rows objectAtIndex:indexPath.row]articlePic]]];
         
         cell.label.text=[[informationClass.data.rows objectAtIndex:indexPath.row]articleRzlx];
         

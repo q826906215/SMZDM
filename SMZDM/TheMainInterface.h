@@ -20,6 +20,8 @@
     
     HaiTaoBaseClass *haiTaoClass;
     
+    BaskInContentBaseClass *contentCless;
+    
     ExperienceBaseClass *experienceCless;
     
     InformationBaseClass *informationClass;
@@ -36,7 +38,7 @@
     
     UITableView *haiTao;
     
-    
+    UITableView *baskinContent;
     
     UITableView *experience;
     

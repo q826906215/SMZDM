@@ -16,30 +16,31 @@
     
     if (self) {
         
-        UILabel *redLabel =[[UILabel alloc]initWithFrame:CGRectMake(0, 0, 320, 40)];
-        redLabel.backgroundColor =[UIColor redColor];
+        UILabel *redLabel =[[UILabel alloc]initWithFrame:CGRectMake(8, 0, 300, 40)];
         
-        redLabel.font =[UIFont systemFontOfSize:15];
+        redLabel.numberOfLines =0;
         
-        redLabel.textColor=[UIColor redColor];
+        redLabel.alpha=0.8;
+        
+        redLabel.font =[UIFont systemFontOfSize:16];
         
         [self addSubview:redLabel];
         
         self.redLabel =redLabel;
         
-        UIImageView * imageView =[[UIImageView alloc]initWithFrame:CGRectMake(8,48, 100, 100)];
+        [redLabel release];
         
-        imageView.backgroundColor =[UIColor redColor];
+        UIImageView * imageView =[[UIImageView alloc]initWithFrame:CGRectMake(8,48, 100, 100)];
         
         [self addSubview:imageView];
         
         self.headerImageView =imageView;
         
+        [imageView release];
+        
         UILabel *label =[[UILabel alloc]initWithFrame:CGRectMake(116, 48, 100, 20)];
         
-        label.backgroundColor =[UIColor redColor];
-        
-        label.font =[UIFont systemFontOfSize:16];
+        label.font =[UIFont systemFontOfSize:14];
         
         label.tintColor =[UIColor blackColor];
         
@@ -49,23 +50,27 @@
         
         self.label =label;
         
+        [label release];
+        
         UILabel *rightLabel =[[UILabel alloc]initWithFrame:CGRectMake(270, 48, 40, 20)];
-        rightLabel.backgroundColor =[UIColor redColor];
         
         rightLabel.font =[UIFont systemFontOfSize:14];
         
         rightLabel.tintColor =[UIColor blackColor];
         
-        rightLabel.alpha =0.3;
+        rightLabel.alpha =0.4;
         
         [self addSubview:rightLabel ];
         
         self.rightLabel =rightLabel;
         
-        UILabel *bigLabel =[[UILabel alloc]initWithFrame:CGRectMake(116, 70, 194, 60)];
-        bigLabel.backgroundColor =[UIColor redColor];
+        [rightLabel release];
         
-        bigLabel.font =[UIFont systemFontOfSize:14];
+        UILabel *bigLabel =[[UILabel alloc]initWithFrame:CGRectMake(116, 70, 194, 60)];
+        
+        bigLabel.font =[UIFont systemFontOfSize:16];
+        
+        bigLabel.alpha =0.5;
         
         bigLabel.numberOfLines =0;
         
@@ -73,15 +78,17 @@
         
         self.bigLabel =bigLabel;
         
+        [bigLabel release];
+        
         UIImageView * nextView =[[UIImageView alloc]initWithFrame:CGRectMake(116, 134, 17, 17)];
-         nextView.backgroundColor =[UIColor redColor];
         
         [self addSubview:nextView];
         
         self.iImageView =nextView;
         
+        [nextView release];
+        
         UILabel *nextLabel =[[UILabel alloc]initWithFrame:CGRectMake(140, 134, 60, 17)];
-        nextLabel.backgroundColor =[UIColor redColor];
         
         nextLabel.font =[UIFont systemFontOfSize:14];
         
@@ -91,10 +98,14 @@
         
         self.nextLabel =nextLabel;
         
+        [nextLabel release];
+        
     }
     return self;
     
 }
+
+
 
 
 - (void)awakeFromNib {

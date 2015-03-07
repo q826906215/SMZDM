@@ -20,7 +20,13 @@
     
     HaiTaoBaseClass *haiTaoClass;
     
+    BaskInContentBaseClass *contentCless;
+    
+    ExperienceBaseClass *experienceCless;
+    
     InformationBaseClass *informationClass;
+    
+    UIButton *ification;
     
     UIScrollView *articleClassification;
     
@@ -34,15 +40,23 @@
     
     UITableView *haiTao;
     
+    UITableView *baskinContent;
     
-    
-    
+    UITableView *experience;
     
     UITableView *information;
     
     UIPageControl *pageControl;
     
     UIScrollView *hostInterfaceView;
+    
+    UIRefreshControl *refreshControl;
+    UIRefreshControl *refreshControl1;
+    UIRefreshControl *refreshControl2;
+    UIRefreshControl *refreshControl3;
+    UIRefreshControl *refreshControl4;
+    UIRefreshControl *refreshControl5;
+    UIRefreshControl *refreshControl6;
     
     int yyy;
     int offsetx;

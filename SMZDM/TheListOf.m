@@ -19,11 +19,15 @@
         
         [self addSubview:imageView];
         
+        imageView.image =[UIImage imageNamed:@"banner_bg@2x.png"];
+        
         self.headerImageView =imageView;
+        
+        [imageView release];
         
         UILabel *label =[[UILabel alloc]initWithFrame:CGRectMake(116, 8, 100, 20)];
         
-        label.font =[UIFont systemFontOfSize:16];
+        label.font =[UIFont systemFontOfSize:14];
         
         label.tintColor =[UIColor blackColor];
         
@@ -32,6 +36,8 @@
         [self addSubview:label];
         
         self.label =label;
+        
+        [label release];
         
         UILabel *rightLabel =[[UILabel alloc]initWithFrame:CGRectMake(270, 8, 40, 20)];
         
@@ -45,9 +51,13 @@
         
         self.rightLabel =rightLabel;
         
+        [rightLabel release];
+        
         UILabel *bigLabel =[[UILabel alloc]initWithFrame:CGRectMake(116, 30, 194, 40)];
         
-        bigLabel.font =[UIFont systemFontOfSize:14];
+        bigLabel.font =[UIFont systemFontOfSize:15];
+        
+        bigLabel.alpha =0.7;
         
         bigLabel.numberOfLines =0;
         
@@ -55,15 +65,21 @@
         
         self.bigLabel =bigLabel;
         
+        [bigLabel release];
+        
         UILabel *redLabel =[[UILabel alloc]initWithFrame:CGRectMake(116, 72, 130, 20)];
         
         redLabel.font =[UIFont systemFontOfSize:15];
         
         redLabel.textColor=[UIColor redColor];
         
+        redLabel.alpha =0.8;
+        
         [self addSubview:redLabel];
         
         self.redLabel =redLabel;
+        
+        [redLabel  release];
         
         UIImageView * nextView =[[UIImageView alloc]initWithFrame:CGRectMake(116, 94, 17, 17)];
         
@@ -80,6 +96,8 @@
         [self addSubview:nextLabel];
         
         self.nextLabel =nextLabel;
+        
+        [nextLabel release];
         
     }
     return self;

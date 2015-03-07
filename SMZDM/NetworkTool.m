@@ -7,7 +7,7 @@
 //
 
 #import "NetworkTool.h"
-#import "AFNetworking.h"
+#import <AFNetworking.h>
 #import "DataModels.h"
 
 
@@ -50,7 +50,7 @@
     
     [manger GET:encodedString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
-//        NSLog(@"----------%@",responseObject);
+        NSLog(@"----------%@",responseObject);
         
         NSDictionary *dic =responseObject;
         
@@ -92,6 +92,8 @@
     
     [manger GET:encodedString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
 //        NSLog(@"%@",responseObject);
+<<<<<<< HEAD
+=======
         
         NSDictionary * dic =responseObject;
         
@@ -101,6 +103,46 @@
         NSLog(@"Error:%@",error);
     }];
 }
+
++(void)getFistPageBaskInContentDataCompletionBlock:(void (^)(NSDictionary *dic))block{
+    AFHTTPRequestOperationManager *manager =[AFHTTPRequestOperationManager manager];
+    
+    NSString *urlString =@"http://api.smzdm.com/v1/show/articles?f=iphone&s=54f6f2008e2df721067&limit=20&imgmode=0";
+    
+    NSString *encodedString =(NSString *)CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault, (CFStringRef)urlString, NULL,NULL,kCFStringEncodingUTF8);
+    
+    [manager GET:encodedString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+//        NSLog(@"%@",responseObject );
+        
+        NSDictionary *dic=responseObject;
+        
+        block(dic);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error:%@",error);
+    }];
+}
+
++(void)getFistPageExperienceDataCompletionBlock:(void (^)(NSDictionary *dic))block{
+    AFHTTPRequestOperationManager *manger =[AFHTTPRequestOperationManager manager];
+    
+    NSString *urlString =@"http://api.smzdm.com/v1/jingyan/articles?f=iphone&s=54f6f2008e2df721067&limit=20&imgmode=0";
+    
+    NSString *encodedString = (NSString *)CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault, (CFStringRef)urlString, NULL, NULL, kCFStringEncodingUTF8);
+    
+    [manger GET:encodedString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"%@",responseObject);
+>>>>>>> origin/master
+        
+        NSDictionary * dic =responseObject;
+        
+        block(dic);
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error:%@",error);
+    }];
+    
+}
+
 +(void)getFistPageInformationDataCompletionBlock:(void (^)(NSDictionary *dic))block{
     
      AFHTTPRequestOperationManager *manger =[AFHTTPRequestOperationManager manager];
@@ -111,6 +153,10 @@
     
     [manger GET:encodedString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
 //        NSLog(@"%@",responseObject);
+<<<<<<< HEAD
+=======
+        
+>>>>>>> origin/master
         NSDictionary * dic =responseObject;
         
         block(dic);

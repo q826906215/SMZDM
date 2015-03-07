@@ -155,4 +155,22 @@
     }];
     
 }
+
+//--------------------日排行－－－－－－－－－－－－－－－－－－－－－－－－－
++(void)getDayListIndex:(NSInteger)sender
+       CompletionBlock:(void(^)(NSDictionary * dic))block
+{
+    //    UIButton *  btn =(UIButton*)sender;
+    NSArray * array = @[@"http://api.smzdm.com/v1/youhui/articles?imgmode=0&f=iphone&s=54f96cdacdb53897493&filter=hot_1&limit=20&offset=0",@"http://api.smzdm.com/v1/haitao/articles?imgmode=0&f=iphone&s=54f96cdacdb53897493&filter=hot_1&limit=20&offset=0",@"http://api.smzdm.com/v1/faxian/articles?imgmode=0&f=iphone&s=54f96cdacdb53897493&filter=hot_1&limit=20&offset=0",@"http://api.smzdm.com/v1/show/articles?imgmode=0&f=iphone&s=54f96cdacdb53897493&filter=hot_1&limit=20&offset=0",@"http://api.smzdm.com/v1/jingyan/articles?imgmode=0&f=iphone&s=54f96cdacdb53897493&filter=hot_1&limit=20&offset=0",@"http://api.smzdm.com/v1/news/articles?imgmode=0&f=iphone&s=54f96cdacdb53897493&filter=hot_1&limit=20&offset=0"];
+    
+    
+    NSString * urlString = [array objectAtIndex:sender];
+    AFHTTPSessionManager * manager =[AFHTTPSessionManager manager];
+    [manager GET:urlString parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+        block(responseObject);
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        NSLog(@"---失败");
+    }];
+}
+
 @end

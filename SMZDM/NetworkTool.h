@@ -17,6 +17,7 @@
 +(void)getFistPageBaskInContentDataCompletionBlock:(void (^)(NSDictionary *dic))block;
 +(void)getFistPageExperienceDataCompletionBlock:(void (^)(NSDictionary *dic))block;
 +(void)getFistPageInformationDataCompletionBlock:(void (^)(NSDictionary *dic))block;
-
+//----------------日排行－－－－－－－－－－－－
++(void)getDayListIndex:(NSInteger)sender CompletionBlock:(void(^)(NSDictionary * dic))block ;
 
 @end

@@ -26,8 +26,18 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
-    
-    
+    NSString * str = [[NSUserDefaults standardUserDefaults] objectForKey:@"first"];
+    if (!str) {
+        [self firstIntoView];
+    }else
+    {
+        [self experience];
+    }
+    return YES;
+}
+
+
+-(void)firstIntoView{
     
     productIntroduction=[[UIScrollView alloc]initWithFrame:[UIScreen mainScreen].bounds];
     
@@ -56,22 +66,6 @@
         
         [briefImageView release];
     }
-    
-    
-//    pageControl =[[UIPageControl alloc]initWithFrame:CGRectMake(110, 460, 100, 50)];
-//    
-//    [pageControl addTarget:self action:@selector(pageChanged:) forControlEvents:UIControlEventValueChanged];
-//    
-//    pageControl.numberOfPages =4;
-//    
-//    pageControl.pageIndicatorTintColor =[UIColor whiteColor];
-//    
-//    pageControl.currentPage =0;
-//    
-//    pageControl.currentPageIndicatorTintColor =[UIColor redColor];
-//    
-//    [self.window addSubview:pageControl];
-    
     UIButton *experienceImmediately =[UIButton buttonWithType:UIButtonTypeRoundedRect];
     
     experienceImmediately.frame =CGRectMake(1050, 460, 150, 40);
@@ -81,8 +75,8 @@
     [experienceImmediately addTarget:self action:@selector(experience) forControlEvents:UIControlEventTouchUpInside];
     
     [productIntroduction addSubview:experienceImmediately];
+
     
-    return YES;
 }
 -(void)experience{
     

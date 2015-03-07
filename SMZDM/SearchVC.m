@@ -19,15 +19,16 @@
     // Do any additional setup after loading the view.
     
    _searchField =[[UITextField alloc] init];
-    _searchField.frame =CGRectMake(70, 50, 375-80, 50);
-    _searchField.backgroundColor=[UIColor  lightGrayColor];
+    _searchField.frame =CGRectMake(70, 30, 320-100, 40);
+//    _searchField.backgroundColor=[UIColor  lightGrayColor];
+    _searchField.backgroundColor=[UIColor colorWithRed:0.8 green:0.8 blue:0.8 alpha:1];
     [_searchField setPlaceholder:@" 🔍  搜索  什么值得买..."];
     [_searchField addTarget:self action:@selector(searchField) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_searchField];
     
     _button =[UIButton buttonWithType:UIButtonTypeCustom];
     [_button  setBackgroundImage:[UIImage imageNamed:@"ic_red_back@2x"] forState:UIControlStateNormal];
-    _button.frame = CGRectMake(20 , 55, 30, 40);
+    _button.frame = CGRectMake(20 , 33, 20, 25);
     [_button addTarget:self action:@selector(backClick) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_button];
     
@@ -35,19 +36,19 @@
     [ _classBtn   setTitle:@"分类筛选" forState:UIControlStateNormal];
     [ _classBtn   setTitleColor:[UIColor redColor] forState:UIControlStateNormal  ];
     [ _classBtn   addTarget:self action:@selector(classClick) forControlEvents:UIControlEventTouchUpInside];
-     _classBtn .frame =CGRectMake(20, 120, 80, 30) ;
+     _classBtn .frame =CGRectMake(20, 80, 80, 30) ;
     [self.view addSubview: _classBtn ];
     
     
     _shopBtn =[UIButton buttonWithType:UIButtonTypeCustom];
     [_shopBtn  setTitle:@"商城筛选"  forState:UIControlStateNormal];
-    _shopBtn.frame =CGRectMake(130, 120, 80, 30);
+    _shopBtn.frame =CGRectMake(130, 80, 80, 30);
     [_shopBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [_shopBtn  addTarget:self action:@selector(shopClick) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_shopBtn];
 
     _downView =[UIView new];
-    _downView.frame =CGRectMake(20, 150, 80, 2);
+    _downView.frame =CGRectMake(20, 110, 80, 2);
     _downView.backgroundColor=[UIColor redColor];
     [self.view addSubview:_downView];
     
@@ -68,7 +69,7 @@
 {
     [_classBtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
     [UIView animateWithDuration:0.5 animations:^{
-        _downView.frame =CGRectMake(20, 150, 80, 2);
+        _downView.frame =CGRectMake(20, 110, 80, 2);
 
     }];
     [_shopBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
@@ -79,7 +80,7 @@
      [_shopBtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
     [_classBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
      [UIView animateWithDuration:0.5 animations:^{
-         _downView.frame=CGRectMake(130, 150, 80, 2);
+         _downView.frame=CGRectMake(130, 110, 80, 2);
      }];
     
     
@@ -89,18 +90,15 @@
 
 -(void)backClick
 {
-//    _button setBackgroundImage:<#(UIImage *)#> forState:<#(UIControlState)#>
-    
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
-
-
 
 //-热门标签
 
 -(void)hotLable
 {
     _scrollView =[[UIScrollView alloc] init ];
-    _scrollView.frame = CGRectMake(0, 152, 375, 590);
+    _scrollView.frame = CGRectMake(0, 120, 375, 590);
     _scrollView.contentSize =CGSizeMake(375, 880);
     _scrollView.backgroundColor= [UIColor colorWithRed:0.9 green:0.9 blue:0.9 alpha:1];
     [self.view addSubview:_scrollView];

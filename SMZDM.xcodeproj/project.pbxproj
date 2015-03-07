@@ -7,11 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		095202041AA9DD7D00A12CBC /* CustomLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 095202021AA9DD7D00A12CBC /* CustomLine.m */; };
-		095202051AA9DD7D00A12CBC /* SearchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 095202031AA9DD7D00A12CBC /* SearchVC.m */; };
-		0952020D1AA9DDFD00A12CBC /* ListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 095202081AA9DDFD00A12CBC /* ListVC.m */; };
-		0952020E1AA9DDFD00A12CBC /* YHcell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0952020A1AA9DDFD00A12CBC /* YHcell.m */; };
-		0952020F1AA9DDFD00A12CBC /* AllTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0952020C1AA9DDFD00A12CBC /* AllTableView.m */; };
 		095202281AA9DF1C00A12CBC /* 1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 095202111AA9DF1C00A12CBC /* 1@2x.png */; };
 		095202291AA9DF1C00A12CBC /* ic_search@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 095202121AA9DF1C00A12CBC /* ic_search@2x.png */; };
 		0952022A1AA9DF1C00A12CBC /* ic_xq_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 095202131AA9DF1C00A12CBC /* ic_xq_back@2x.png */; };
@@ -49,6 +44,12 @@
 		121D74101AA9F26E008A9CBF /* ExperienceBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 121D740B1AA9F26E008A9CBF /* ExperienceBaseClass.m */; };
 		121D74111AA9F26E008A9CBF /* ExperienceData.m in Sources */ = {isa = PBXBuildFile; fileRef = 121D740D1AA9F26E008A9CBF /* ExperienceData.m */; };
 		121D74121AA9F26E008A9CBF /* ExperienceRows.m in Sources */ = {isa = PBXBuildFile; fileRef = 121D740F1AA9F26E008A9CBF /* ExperienceRows.m */; };
+		1225B15E1AAB502900D9F485 /* SearchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1225B15B1AAB502900D9F485 /* SearchVC.m */; };
+		1225B15F1AAB502900D9F485 /* CustomLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 1225B15D1AAB502900D9F485 /* CustomLine.m */; };
+		1225B1671AAB505900D9F485 /* ListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1225B1611AAB505900D9F485 /* ListVC.m */; };
+		1225B1681AAB505900D9F485 /* AllTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1225B1631AAB505900D9F485 /* AllTableView.m */; };
+		1225B1691AAB505900D9F485 /* YHcell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1225B1651AAB505900D9F485 /* YHcell.m */; };
+		1225B16B1AAB511100D9F485 /* MiddleLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 1225B16A1AAB511100D9F485 /* MiddleLine.m */; };
 		1276842A1AA78FEE00B09810 /* ScrollBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 127684251AA78FEE00B09810 /* ScrollBaseClass.m */; };
 		1276842B1AA78FEE00B09810 /* ScrollData.m in Sources */ = {isa = PBXBuildFile; fileRef = 127684271AA78FEE00B09810 /* ScrollData.m */; };
 		1276842C1AA78FEE00B09810 /* ScrollRows.m in Sources */ = {isa = PBXBuildFile; fileRef = 127684291AA78FEE00B09810 /* ScrollRows.m */; };
@@ -109,16 +110,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		095202001AA9DD6C00A12CBC /* SearchVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchVC.h; sourceTree = "<group>"; };
-		095202011AA9DD7D00A12CBC /* CustomLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomLine.h; sourceTree = "<group>"; };
-		095202021AA9DD7D00A12CBC /* CustomLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomLine.m; sourceTree = "<group>"; };
-		095202031AA9DD7D00A12CBC /* SearchVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchVC.m; sourceTree = "<group>"; };
-		095202071AA9DDFD00A12CBC /* ListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListVC.h; sourceTree = "<group>"; };
-		095202081AA9DDFD00A12CBC /* ListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListVC.m; sourceTree = "<group>"; };
-		095202091AA9DDFD00A12CBC /* YHcell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHcell.h; sourceTree = "<group>"; };
-		0952020A1AA9DDFD00A12CBC /* YHcell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHcell.m; sourceTree = "<group>"; };
-		0952020B1AA9DDFD00A12CBC /* AllTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllTableView.h; sourceTree = "<group>"; };
-		0952020C1AA9DDFD00A12CBC /* AllTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllTableView.m; sourceTree = "<group>"; };
 		095202111AA9DF1C00A12CBC /* 1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1@2x.png"; sourceTree = "<group>"; };
 		095202121AA9DF1C00A12CBC /* ic_search@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_search@2x.png"; sourceTree = "<group>"; };
 		095202131AA9DF1C00A12CBC /* ic_xq_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_xq_back@2x.png"; sourceTree = "<group>"; };
@@ -171,6 +162,18 @@
 		121D740D1AA9F26E008A9CBF /* ExperienceData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExperienceData.m; sourceTree = "<group>"; };
 		121D740E1AA9F26E008A9CBF /* ExperienceRows.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExperienceRows.h; sourceTree = "<group>"; };
 		121D740F1AA9F26E008A9CBF /* ExperienceRows.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExperienceRows.m; sourceTree = "<group>"; };
+		1225B15A1AAB502900D9F485 /* SearchVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchVC.h; sourceTree = "<group>"; };
+		1225B15B1AAB502900D9F485 /* SearchVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchVC.m; sourceTree = "<group>"; };
+		1225B15C1AAB502900D9F485 /* CustomLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomLine.h; sourceTree = "<group>"; };
+		1225B15D1AAB502900D9F485 /* CustomLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomLine.m; sourceTree = "<group>"; };
+		1225B1601AAB505900D9F485 /* ListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListVC.h; sourceTree = "<group>"; };
+		1225B1611AAB505900D9F485 /* ListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListVC.m; sourceTree = "<group>"; };
+		1225B1621AAB505900D9F485 /* AllTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllTableView.h; sourceTree = "<group>"; };
+		1225B1631AAB505900D9F485 /* AllTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllTableView.m; sourceTree = "<group>"; };
+		1225B1641AAB505900D9F485 /* YHcell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHcell.h; sourceTree = "<group>"; };
+		1225B1651AAB505900D9F485 /* YHcell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHcell.m; sourceTree = "<group>"; };
+		1225B1661AAB505900D9F485 /* MiddleLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiddleLine.h; sourceTree = "<group>"; };
+		1225B16A1AAB511100D9F485 /* MiddleLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MiddleLine.m; sourceTree = "<group>"; };
 		127684241AA78FEE00B09810 /* ScrollBaseClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollBaseClass.h; sourceTree = "<group>"; };
 		127684251AA78FEE00B09810 /* ScrollBaseClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollBaseClass.m; sourceTree = "<group>"; };
 		127684261AA78FEE00B09810 /* ScrollData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollData.h; sourceTree = "<group>"; };
@@ -262,10 +265,10 @@
 		095201FF1AA9DD4A00A12CBC /* Sorting */ = {
 			isa = PBXGroup;
 			children = (
-				095202001AA9DD6C00A12CBC /* SearchVC.h */,
-				095202031AA9DD7D00A12CBC /* SearchVC.m */,
-				095202011AA9DD7D00A12CBC /* CustomLine.h */,
-				095202021AA9DD7D00A12CBC /* CustomLine.m */,
+				1225B15A1AAB502900D9F485 /* SearchVC.h */,
+				1225B15B1AAB502900D9F485 /* SearchVC.m */,
+				1225B15C1AAB502900D9F485 /* CustomLine.h */,
+				1225B15D1AAB502900D9F485 /* CustomLine.m */,
 			);
 			name = Sorting;
 			sourceTree = "<group>";
@@ -273,12 +276,14 @@
 		095202061AA9DDC600A12CBC /* DayList */ = {
 			isa = PBXGroup;
 			children = (
-				095202071AA9DDFD00A12CBC /* ListVC.h */,
-				095202081AA9DDFD00A12CBC /* ListVC.m */,
-				095202091AA9DDFD00A12CBC /* YHcell.h */,
-				0952020A1AA9DDFD00A12CBC /* YHcell.m */,
-				0952020B1AA9DDFD00A12CBC /* AllTableView.h */,
-				0952020C1AA9DDFD00A12CBC /* AllTableView.m */,
+				1225B1601AAB505900D9F485 /* ListVC.h */,
+				1225B1611AAB505900D9F485 /* ListVC.m */,
+				1225B1621AAB505900D9F485 /* AllTableView.h */,
+				1225B1631AAB505900D9F485 /* AllTableView.m */,
+				1225B1641AAB505900D9F485 /* YHcell.h */,
+				1225B1651AAB505900D9F485 /* YHcell.m */,
+				1225B1661AAB505900D9F485 /* MiddleLine.h */,
+				1225B16A1AAB511100D9F485 /* MiddleLine.m */,
 			);
 			name = DayList;
 			sourceTree = "<group>";
@@ -346,7 +351,7 @@
 			path = Experience;
 			sourceTree = "<group>";
 		};
-		125C4E4B1AA953DA009C1118 /* Resource map */ = {
+		125C4E4B1AA953DA009C1118 /* Image */ = {
 			isa = PBXGroup;
 			children = (
 				12A320D91AA74FF500256CC9 /* intro_ip5_1.png */,
@@ -400,7 +405,7 @@
 				095202261AA9DF1C00A12CBC /* ic_search_14@2x.png */,
 				095202271AA9DF1C00A12CBC /* ic_search_15@2x.png */,
 			);
-			name = "Resource map";
+			name = Image;
 			path = AFNetworking;
 			sourceTree = "<group>";
 		};
@@ -461,12 +466,12 @@
 				128939851AAAE40000CB6220 /* BaskInContent */,
 				121D74091AA9F26E008A9CBF /* Experience */,
 				121D73FE1AA9C878008A9CBF /* information */,
+				121D73EC1AA97469008A9CBF /* AllTools */,
 				12A320BD1AA7449700256CC9 /* AppDelegate.h */,
 				12A320BE1AA7449700256CC9 /* AppDelegate.m */,
 				12A320E31AA7657700256CC9 /* TheMainInterface.h */,
 				12A320E41AA7657800256CC9 /* TheMainInterface.m */,
 				12B589A31AAB288500E2E163 /* icon@2x-5.png */,
-				121D73EC1AA97469008A9CBF /* AllTools */,
 				12D39D3D1AA84459000D783C /* TheListOf.h */,
 				12D39D3E1AA84459000D783C /* TheListOf.m */,
 				1289398F1AAAE44E00CB6220 /* BaskInContentCell.h */,
@@ -475,7 +480,7 @@
 				121D73FC1AA9AF7E008A9CBF /* TheListViewCell.m */,
 				095201FF1AA9DD4A00A12CBC /* Sorting */,
 				095202061AA9DDC600A12CBC /* DayList */,
-				125C4E4B1AA953DA009C1118 /* Resource map */,
+				125C4E4B1AA953DA009C1118 /* Image */,
 				12A320C01AA7449700256CC9 /* Images.xcassets */,
 				12A320C21AA7449700256CC9 /* LaunchScreen.xib */,
 				12A320B91AA7449700256CC9 /* Supporting Files */,
@@ -727,36 +732,37 @@
 				121D74081AA9C878008A9CBF /* InformationRows.m in Sources */,
 				12D39DC11AA8A105000D783C /* NetworkTool.m in Sources */,
 				121D73FD1AA9AF7E008A9CBF /* TheListViewCell.m in Sources */,
-				095202051AA9DD7D00A12CBC /* SearchVC.m in Sources */,
 				121D74111AA9F26E008A9CBF /* ExperienceData.m in Sources */,
 				1276842A1AA78FEE00B09810 /* ScrollBaseClass.m in Sources */,
 				12A320BF1AA7449700256CC9 /* AppDelegate.m in Sources */,
 				121D73E91AA97439008A9CBF /* preferentialBaseClass.m in Sources */,
 				12D39DBB1AA89E6E000D783C /* SelectBaseClass.m in Sources */,
-				095202041AA9DD7D00A12CBC /* CustomLine.m in Sources */,
 				121D73F71AA985D7008A9CBF /* HaiTaoRows.m in Sources */,
 				121D73EA1AA97439008A9CBF /* preferentialData.m in Sources */,
 				12D39DBD1AA89E6E000D783C /* SelectRows.m in Sources */,
 				12A320E51AA7657800256CC9 /* TheMainInterface.m in Sources */,
 				121D74071AA9C878008A9CBF /* InformationData.m in Sources */,
-				0952020E1AA9DDFD00A12CBC /* YHcell.m in Sources */,
 				12D39D3F1AA84459000D783C /* TheListOf.m in Sources */,
 				1289398C1AAAE40000CB6220 /* BaskInContentBaseClass.m in Sources */,
+				1225B1681AAB505900D9F485 /* AllTableView.m in Sources */,
+				1225B15F1AAB502900D9F485 /* CustomLine.m in Sources */,
 				121D74061AA9C878008A9CBF /* InformationBaseClass.m in Sources */,
 				121D73F61AA985D7008A9CBF /* HaiTaoData.m in Sources */,
 				12D39DBC1AA89E6E000D783C /* SelectData.m in Sources */,
+				1225B1691AAB505900D9F485 /* YHcell.m in Sources */,
 				1276842C1AA78FEE00B09810 /* ScrollRows.m in Sources */,
 				1276842B1AA78FEE00B09810 /* ScrollData.m in Sources */,
 				1289398E1AAAE40000CB6220 /* BaskInContentRows.m in Sources */,
 				121D74101AA9F26E008A9CBF /* ExperienceBaseClass.m in Sources */,
 				128939911AAAE44E00CB6220 /* BaskInContentCell.m in Sources */,
+				1225B1671AAB505900D9F485 /* ListVC.m in Sources */,
 				12A320BC1AA7449700256CC9 /* main.m in Sources */,
 				121D73F51AA985D7008A9CBF /* HaiTaoBaseClass.m in Sources */,
 				121D74121AA9F26E008A9CBF /* ExperienceRows.m in Sources */,
 				1289398D1AAAE40000CB6220 /* BaskInContentData.m in Sources */,
 				121D73EB1AA97439008A9CBF /* preferentialRows.m in Sources */,
-				0952020F1AA9DDFD00A12CBC /* AllTableView.m in Sources */,
-				0952020D1AA9DDFD00A12CBC /* ListVC.m in Sources */,
+				1225B15E1AAB502900D9F485 /* SearchVC.m in Sources */,
+				1225B16B1AAB511100D9F485 /* MiddleLine.m in Sources */,
 				121D73E81AA97439008A9CBF /* preferentialArticleMallClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -14,6 +14,8 @@
 #import "NetworkTool.h"
 #import "SearchVC.h"
 #import "BaskInContentCell.h"
+#import "PersonalInformation.h"
+
 
 
 
@@ -23,22 +25,19 @@
 
 @implementation TheMainInterface
 
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    self.title =@"什么值得买";
-    UIButton * leftButton =[UIButton buttonWithType:UIButtonTypeCustom];
-    leftButton.frame =CGRectMake(0, 0, 20, 20);
-    [leftButton setBackgroundImage:[UIImage imageNamed:@"ic_search@2x.png"] forState:UIControlStateNormal];
-    [leftButton  addTarget:self action:@selector(searchShop) forControlEvents:UIControlEventTouchUpInside];
-    
-    UIBarButtonItem * leftItem =[[UIBarButtonItem alloc] initWithCustomView:leftButton];
-    self.navigationItem.leftBarButtonItem=leftItem;
-    
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage alloc] forBarMetrics:UIBarMetricsDefault];
-    
-    self.navigationController.navigationBar.shadowImage=[[UIImage alloc]init];
     
     UIView *view=[[UIView alloc]initWithFrame:[UIScreen mainScreen].bounds];
     
@@ -46,6 +45,38 @@
     
     [self.view addSubview:view];
     
+    UINavigationBar*bar=[[UINavigationBar alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 64)];
+    
+    UINavigationItem *item = [[UINavigationItem alloc] initWithTitle:@"什么值得买"];
+    
+    [bar setBackgroundImage:[UIImage alloc] forBarMetrics:UIBarMetricsDefault];
+    
+    bar.shadowImage=[[UIImage alloc]init];
+    
+    [bar pushNavigationItem:item animated:NO];
+    
+    [self.view addSubview:bar];
+    
+    UIButton * leftButton =[UIButton buttonWithType:UIButtonTypeCustom];
+    leftButton.frame =CGRectMake(10,25, 20, 20);
+    [leftButton setBackgroundImage:[UIImage imageNamed:@"ic_search@2x.png"] forState:UIControlStateNormal];
+    leftButton.tag=1000;
+    [leftButton  addTarget:self action:@selector(searchShop:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [bar addSubview:leftButton];
+//    UIBarButtonItem * leftItem =[[UIBarButtonItem alloc] initWithCustomView:leftButton];
+//    self.navigationItem.leftBarButtonItem=leftItem;
+    
+    UIButton * Button =[UIButton buttonWithType:UIButtonTypeCustom];
+    Button.frame =CGRectMake(280, 25, 20, 20);
+    [Button setBackgroundImage:[UIImage imageNamed:@"ic_search@2x.png"] forState:UIControlStateNormal];
+    Button.tag =1001;
+    [Button  addTarget:self action:@selector(searchShop:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [bar addSubview:Button];
+    
+//    UIBarButtonItem * Item =[[UIBarButtonItem alloc] initWithCustomView:Button];
+//    self.navigationItem.rightBarButtonItem=Item;
     [NetworkTool getFistPageScrollImageDataCompletionBlock:^(NSDictionary *dic) {
         
         baseClass =[ScrollBaseClass modelObjectWithDictionary:dic];
@@ -56,15 +87,19 @@
     [view release];
 }
 
--(void)searchShop
+-(void)searchShop:(UIButton *)sender
 {
-    SearchVC * svc =[[SearchVC alloc] init];
-    [self presentViewController:svc animated:YES completion:nil];
+    if (sender.tag ==1000) {
+        SearchVC * svc =[[SearchVC alloc] init];
+        [self presentViewController:svc animated:YES completion:nil];
+    }else{
+        PersonalInformation *vc =[[PersonalInformation alloc]init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
 }
 -(void)Classification{
     
     articleClassification =[[UIScrollView alloc]initWithFrame:CGRectMake(0, 64, 320, 50)];
-    
     articleClassification.pagingEnabled =YES;
     
     articleClassification.delegate =self;
@@ -82,7 +117,6 @@
     [articleClassification release];
     
     NSArray *titlearray =@[@"精选",@"优惠",@"海淘",@"发现",@"晒物",@"经验",@"资讯",];
-    
     
     for (int i=0; i<7; i++) {
         

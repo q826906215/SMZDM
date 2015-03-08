@@ -17,8 +17,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    UIView *view =[[UIView alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    view.backgroundColor =[UIColor whiteColor];
+    [self.view addSubview:view];
     
-   _searchField =[[UITextField alloc] init];
+    _searchField =[[UITextField alloc] init];
     _searchField.frame =CGRectMake(70, 30, 320-100, 40);
 //    _searchField.backgroundColor=[UIColor  lightGrayColor];
     _searchField.backgroundColor=[UIColor colorWithRed:0.8 green:0.8 blue:0.8 alpha:1];

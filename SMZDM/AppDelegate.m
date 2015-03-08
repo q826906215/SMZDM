@@ -7,15 +7,16 @@
 //
 ///////
 #import "AppDelegate.h"
+
+#import "DTNavigationController.h"
 #import "TheMainInterface.h"
 
-@interface AppDelegate (){
-    UIScrollView *productIntroduction;
-    
-    UIPageControl *pageControl;
-}
 
-@end
+//@interface AppDelegate (){
+//    
+//}
+//
+//@end
 
 @implementation AppDelegate
 
@@ -25,6 +26,7 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
     
     NSString * str = [[NSUserDefaults standardUserDefaults] objectForKey:@"first"];
     if (!str) {
@@ -80,16 +82,17 @@
 }
 -(void)experience{
     
-    
     TheMainInterface *interface=[[TheMainInterface alloc]init];
     
-    UINavigationController *controller =[[UINavigationController alloc]initWithRootViewController:interface];
-    
-    [[UINavigationBar appearance]setBarTintColor:[UIColor whiteColor]];
+    DTNavigationController *controller =[[DTNavigationController alloc]initWithRootViewController:interface];
     
     self.window.rootViewController =controller;
     
-    [productIntroduction  removeFromSuperview];
+    self.window.backgroundColor =[UIColor whiteColor];
+    
+    [self.window makeKeyAndVisible];
+    
+//    [productIntroduction  removeFromSuperview];
     
 }
 

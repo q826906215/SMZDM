@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate,UIScrollViewDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate,UIScrollViewDelegate>{
+    UIScrollView *productIntroduction;
+    
+    UIPageControl *pageControl;
+}
 
 @property (strong, nonatomic) UIWindow *window;
 

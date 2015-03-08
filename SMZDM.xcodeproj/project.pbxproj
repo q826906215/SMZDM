@@ -50,6 +50,7 @@
 		1225B1681AAB505900D9F485 /* AllTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1225B1631AAB505900D9F485 /* AllTableView.m */; };
 		1225B1691AAB505900D9F485 /* YHcell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1225B1651AAB505900D9F485 /* YHcell.m */; };
 		1225B16B1AAB511100D9F485 /* MiddleLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 1225B16A1AAB511100D9F485 /* MiddleLine.m */; };
+		124B500F1AAB7E8A007656F4 /* PersonalInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 124B500E1AAB7E8A007656F4 /* PersonalInformation.m */; };
 		1276842A1AA78FEE00B09810 /* ScrollBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 127684251AA78FEE00B09810 /* ScrollBaseClass.m */; };
 		1276842B1AA78FEE00B09810 /* ScrollData.m in Sources */ = {isa = PBXBuildFile; fileRef = 127684271AA78FEE00B09810 /* ScrollData.m */; };
 		1276842C1AA78FEE00B09810 /* ScrollRows.m in Sources */ = {isa = PBXBuildFile; fileRef = 127684291AA78FEE00B09810 /* ScrollRows.m */; };
@@ -79,6 +80,7 @@
 		1289398D1AAAE40000CB6220 /* BaskInContentData.m in Sources */ = {isa = PBXBuildFile; fileRef = 128939891AAAE40000CB6220 /* BaskInContentData.m */; };
 		1289398E1AAAE40000CB6220 /* BaskInContentRows.m in Sources */ = {isa = PBXBuildFile; fileRef = 1289398B1AAAE40000CB6220 /* BaskInContentRows.m */; };
 		128939911AAAE44E00CB6220 /* BaskInContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 128939901AAAE44E00CB6220 /* BaskInContentCell.m */; };
+		129321131AAB89920087DB8A /* DTNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 129321121AAB89920087DB8A /* DTNavigationController.m */; };
 		12A320BC1AA7449700256CC9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 12A320BB1AA7449700256CC9 /* main.m */; };
 		12A320BF1AA7449700256CC9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 12A320BE1AA7449700256CC9 /* AppDelegate.m */; };
 		12A320C11AA7449700256CC9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12A320C01AA7449700256CC9 /* Images.xcassets */; };
@@ -174,6 +176,8 @@
 		1225B1651AAB505900D9F485 /* YHcell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHcell.m; sourceTree = "<group>"; };
 		1225B1661AAB505900D9F485 /* MiddleLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiddleLine.h; sourceTree = "<group>"; };
 		1225B16A1AAB511100D9F485 /* MiddleLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MiddleLine.m; sourceTree = "<group>"; };
+		124B500D1AAB7E8A007656F4 /* PersonalInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalInformation.h; sourceTree = "<group>"; };
+		124B500E1AAB7E8A007656F4 /* PersonalInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalInformation.m; sourceTree = "<group>"; };
 		127684241AA78FEE00B09810 /* ScrollBaseClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollBaseClass.h; sourceTree = "<group>"; };
 		127684251AA78FEE00B09810 /* ScrollBaseClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollBaseClass.m; sourceTree = "<group>"; };
 		127684261AA78FEE00B09810 /* ScrollData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollData.h; sourceTree = "<group>"; };
@@ -210,6 +214,8 @@
 		1289398B1AAAE40000CB6220 /* BaskInContentRows.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaskInContentRows.m; sourceTree = "<group>"; };
 		1289398F1AAAE44E00CB6220 /* BaskInContentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaskInContentCell.h; sourceTree = "<group>"; };
 		128939901AAAE44E00CB6220 /* BaskInContentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaskInContentCell.m; sourceTree = "<group>"; };
+		129321111AAB89920087DB8A /* DTNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTNavigationController.h; sourceTree = "<group>"; };
+		129321121AAB89920087DB8A /* DTNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTNavigationController.m; sourceTree = "<group>"; };
 		12A320B61AA7449600256CC9 /* SMZDM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SMZDM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12A320BA1AA7449700256CC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		12A320BB1AA7449700256CC9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -364,6 +370,15 @@
 			name = TableViewcell;
 			sourceTree = "<group>";
 		};
+		124B500C1AAB7D2F007656F4 /* Personal */ = {
+			isa = PBXGroup;
+			children = (
+				124B500D1AAB7E8A007656F4 /* PersonalInformation.h */,
+				124B500E1AAB7E8A007656F4 /* PersonalInformation.m */,
+			);
+			name = Personal;
+			sourceTree = "<group>";
+		};
 		125C4E4B1AA953DA009C1118 /* Image */ = {
 			isa = PBXGroup;
 			children = (
@@ -450,6 +465,13 @@
 			path = BaskInContent;
 			sourceTree = "<group>";
 		};
+		129321101AAB896C0087DB8A /* Third-PartyLibraries */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Third-PartyLibraries";
+			sourceTree = "<group>";
+		};
 		12A320AD1AA7449600256CC9 = {
 			isa = PBXGroup;
 			children = (
@@ -481,10 +503,14 @@
 				121D74091AA9F26E008A9CBF /* Experience */,
 				121D73FE1AA9C878008A9CBF /* information */,
 				121D73EC1AA97469008A9CBF /* AllTools */,
+				129321111AAB89920087DB8A /* DTNavigationController.h */,
+				129321121AAB89920087DB8A /* DTNavigationController.m */,
 				12A320BD1AA7449700256CC9 /* AppDelegate.h */,
 				12A320BE1AA7449700256CC9 /* AppDelegate.m */,
 				12A320E31AA7657700256CC9 /* TheMainInterface.h */,
 				12A320E41AA7657800256CC9 /* TheMainInterface.m */,
+				129321101AAB896C0087DB8A /* Third-PartyLibraries */,
+				124B500C1AAB7D2F007656F4 /* Personal */,
 				124B50081AAB6349007656F4 /* TableViewcell */,
 				095201FF1AA9DD4A00A12CBC /* Sorting */,
 				095202061AA9DDC600A12CBC /* DayList */,
@@ -743,11 +769,13 @@
 				121D74111AA9F26E008A9CBF /* ExperienceData.m in Sources */,
 				1276842A1AA78FEE00B09810 /* ScrollBaseClass.m in Sources */,
 				12A320BF1AA7449700256CC9 /* AppDelegate.m in Sources */,
+				124B500F1AAB7E8A007656F4 /* PersonalInformation.m in Sources */,
 				121D73E91AA97439008A9CBF /* preferentialBaseClass.m in Sources */,
 				12D39DBB1AA89E6E000D783C /* SelectBaseClass.m in Sources */,
 				121D73F71AA985D7008A9CBF /* HaiTaoRows.m in Sources */,
 				121D73EA1AA97439008A9CBF /* preferentialData.m in Sources */,
 				12D39DBD1AA89E6E000D783C /* SelectRows.m in Sources */,
+				129321131AAB89920087DB8A /* DTNavigationController.m in Sources */,
 				12A320E51AA7657800256CC9 /* TheMainInterface.m in Sources */,
 				121D74071AA9C878008A9CBF /* InformationData.m in Sources */,
 				12D39D3F1AA84459000D783C /* TheListOf.m in Sources */,

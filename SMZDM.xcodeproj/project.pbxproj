@@ -81,6 +81,8 @@
 		1289398E1AAAE40000CB6220 /* BaskInContentRows.m in Sources */ = {isa = PBXBuildFile; fileRef = 1289398B1AAAE40000CB6220 /* BaskInContentRows.m */; };
 		128939911AAAE44E00CB6220 /* BaskInContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 128939901AAAE44E00CB6220 /* BaskInContentCell.m */; };
 		129321131AAB89920087DB8A /* DTNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 129321121AAB89920087DB8A /* DTNavigationController.m */; };
+		129321151AABF68E0087DB8A /* ic_user@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 129321141AABF68E0087DB8A /* ic_user@2x.png */; };
+		129321171AABF7460087DB8A /* ico_black_back_press@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 129321161AABF7460087DB8A /* ico_black_back_press@2x.png */; };
 		12A320BC1AA7449700256CC9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 12A320BB1AA7449700256CC9 /* main.m */; };
 		12A320BF1AA7449700256CC9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 12A320BE1AA7449700256CC9 /* AppDelegate.m */; };
 		12A320C11AA7449700256CC9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12A320C01AA7449700256CC9 /* Images.xcassets */; };
@@ -216,6 +218,8 @@
 		128939901AAAE44E00CB6220 /* BaskInContentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaskInContentCell.m; sourceTree = "<group>"; };
 		129321111AAB89920087DB8A /* DTNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTNavigationController.h; sourceTree = "<group>"; };
 		129321121AAB89920087DB8A /* DTNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTNavigationController.m; sourceTree = "<group>"; };
+		129321141AABF68E0087DB8A /* ic_user@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_user@2x.png"; sourceTree = "<group>"; };
+		129321161AABF7460087DB8A /* ico_black_back_press@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico_black_back_press@2x.png"; sourceTree = "<group>"; };
 		12A320B61AA7449600256CC9 /* SMZDM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SMZDM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12A320BA1AA7449700256CC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		12A320BB1AA7449700256CC9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -394,6 +398,7 @@
 				1289395C1AAAE14F00CB6220 /* 4@2x.png */,
 				095202111AA9DF1C00A12CBC /* 1@2x.png */,
 				095202121AA9DF1C00A12CBC /* ic_search@2x.png */,
+				129321141AABF68E0087DB8A /* ic_user@2x.png */,
 				095202131AA9DF1C00A12CBC /* ic_xq_back@2x.png */,
 				128939811AAAE16600CB6220 /* ic_search@2x.png */,
 				128939821AAAE16600CB6220 /* ic_xq_back@2x.png */,
@@ -433,6 +438,7 @@
 				095202251AA9DF1C00A12CBC /* ic_search_13@2x.png */,
 				095202261AA9DF1C00A12CBC /* ic_search_14@2x.png */,
 				095202271AA9DF1C00A12CBC /* ic_search_15@2x.png */,
+				129321161AABF7460087DB8A /* ico_black_back_press@2x.png */,
 			);
 			name = Image;
 			path = AFNetworking;
@@ -673,6 +679,7 @@
 				095202361AA9DF1C00A12CBC /* ic_search_07@2x.png in Resources */,
 				0952023E1AA9DF1C00A12CBC /* ic_search_15@2x.png in Resources */,
 				128939771AAAE15F00CB6220 /* ic_search_06@2x.png in Resources */,
+				129321151AABF68E0087DB8A /* ic_user@2x.png in Resources */,
 				12B589A41AAB288500E2E163 /* icon@2x-5.png in Resources */,
 				128939721AAAE15F00CB6220 /* ic_search_01@2x.png in Resources */,
 				12A320C41AA7449700256CC9 /* LaunchScreen.xib in Resources */,
@@ -692,6 +699,7 @@
 				095202331AA9DF1C00A12CBC /* ic_search_04@2x.png in Resources */,
 				128939741AAAE15F00CB6220 /* ic_search_03@2x.png in Resources */,
 				1289397F1AAAE15F00CB6220 /* ic_search_14@2x.png in Resources */,
+				129321171AABF7460087DB8A /* ico_black_back_press@2x.png in Resources */,
 				12A320E01AA74FF500256CC9 /* intro_ip5_4.png in Resources */,
 				0952022B1AA9DF1C00A12CBC /* ic_red_back@2x.png in Resources */,
 				0952023C1AA9DF1C00A12CBC /* ic_search_13@2x.png in Resources */,

@@ -39,12 +39,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    UIView *view=[[UIView alloc]initWithFrame:[UIScreen mainScreen].bounds];
-    
-    view.backgroundColor =[UIColor whiteColor];
-    
-    [self.view addSubview:view];
-    
+    self.view.backgroundColor =[UIColor whiteColor];
     UINavigationBar*bar=[[UINavigationBar alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 64)];
     
     UINavigationItem *item = [[UINavigationItem alloc] initWithTitle:@"什么值得买"];
@@ -58,7 +53,7 @@
     [self.view addSubview:bar];
     
     UIButton * leftButton =[UIButton buttonWithType:UIButtonTypeCustom];
-    leftButton.frame =CGRectMake(10,25, 20, 20);
+    leftButton.frame =CGRectMake(20,27, 23, 23);
     [leftButton setBackgroundImage:[UIImage imageNamed:@"ic_search@2x.png"] forState:UIControlStateNormal];
     leftButton.tag=1000;
     [leftButton  addTarget:self action:@selector(searchShop:) forControlEvents:UIControlEventTouchUpInside];
@@ -68,8 +63,8 @@
 //    self.navigationItem.leftBarButtonItem=leftItem;
     
     UIButton * Button =[UIButton buttonWithType:UIButtonTypeCustom];
-    Button.frame =CGRectMake(280, 25, 20, 20);
-    [Button setBackgroundImage:[UIImage imageNamed:@"ic_search@2x.png"] forState:UIControlStateNormal];
+    Button.frame =CGRectMake(277, 27, 23, 23);
+    [Button setBackgroundImage:[UIImage imageNamed:@"ic_user@2x.png"] forState:UIControlStateNormal];
     Button.tag =1001;
     [Button  addTarget:self action:@selector(searchShop:) forControlEvents:UIControlEventTouchUpInside];
     
@@ -83,8 +78,6 @@
         
         [self  Classification];
     }];
-    
-    [view release];
 }
 
 -(void)searchShop:(UIButton *)sender

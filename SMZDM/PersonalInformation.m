@@ -19,7 +19,35 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor =[UIColor whiteColor];
     
+    UINavigationBar *bar =[[UINavigationBar alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 64)];
     
+    UINavigationItem *item =[[UINavigationItem alloc]initWithTitle:@""];
+    
+    [bar setBackgroundImage:[UIImage alloc] forBarMetrics:UIBarMetricsDefault];
+    
+    bar.shadowImage=[[UIImage alloc]init];
+    
+    [bar pushNavigationItem:item animated:NO];
+    
+    [self.view addSubview:bar];
+
+    UIButton *leftButton =[[UIButton alloc]initWithFrame:CGRectMake(10, 10, 8, 18)];
+    
+    [leftButton setBackgroundImage:[UIImage imageNamed:@"ico_black_back_press@2x"] forState:UIControlStateNormal];
+    
+    [leftButton addTarget:self action:@selector(backAction) forControlEvents:UIControlEventTouchUpInside];
+    
+//    UIBarButtonItem *leftItem =[[UIBarButtonItem alloc]initWithCustomView:leftButton];
+//    
+//    item.leftBarButtonItem =leftItem;
+//    
+//    [bar pushNavigationItem:item animated:NO];
+    
+    [bar addSubview:leftButton];
+    
+}
+-(void)backAction{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

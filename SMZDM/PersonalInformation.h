@@ -16,6 +16,8 @@
     UIImageView * scalingFigure;
     
     UIScrollView *_sceollView;
+    
+    UIView *view;
 }
 
 @end

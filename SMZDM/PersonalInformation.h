@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PersonalInformation : UIViewController
+@interface PersonalInformation : UIViewController<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>{
+    
+    
+    UITableView *tableViewdo;
+    
+    UIImageView * scalingFigure;
+    
+    UIScrollView *_sceollView;
+}
 
 @end

@@ -13,7 +13,7 @@
 #define WINDOW  [[UIApplication sharedApplication] keyWindow]
 #define SCREEN_VIEW_WIDTH  self.view.bounds.size.width
 
-static const float kDurationTime = 1;
+static const float kDurationTime = 0.7;
 static const float kScaleValue = 0.7;
 
 @interface DTNavigationController ()

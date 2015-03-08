@@ -30,6 +30,7 @@
 		0952023C1AA9DF1C00A12CBC /* ic_search_13@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 095202251AA9DF1C00A12CBC /* ic_search_13@2x.png */; };
 		0952023D1AA9DF1C00A12CBC /* ic_search_14@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 095202261AA9DF1C00A12CBC /* ic_search_14@2x.png */; };
 		0952023E1AA9DF1C00A12CBC /* ic_search_15@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 095202271AA9DF1C00A12CBC /* ic_search_15@2x.png */; };
+		120FD4B51AAC47DD004DE916 /* PersonalInformationcell.m in Sources */ = {isa = PBXBuildFile; fileRef = 120FD4B41AAC47DD004DE916 /* PersonalInformationcell.m */; };
 		121D73E81AA97439008A9CBF /* preferentialArticleMallClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 121D73E11AA97439008A9CBF /* preferentialArticleMallClient.m */; };
 		121D73E91AA97439008A9CBF /* preferentialBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 121D73E31AA97439008A9CBF /* preferentialBaseClass.m */; };
 		121D73EA1AA97439008A9CBF /* preferentialData.m in Sources */ = {isa = PBXBuildFile; fileRef = 121D73E51AA97439008A9CBF /* preferentialData.m */; };
@@ -83,6 +84,7 @@
 		129321131AAB89920087DB8A /* DTNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 129321121AAB89920087DB8A /* DTNavigationController.m */; };
 		129321151AABF68E0087DB8A /* ic_user@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 129321141AABF68E0087DB8A /* ic_user@2x.png */; };
 		129321171AABF7460087DB8A /* ico_black_back_press@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 129321161AABF7460087DB8A /* ico_black_back_press@2x.png */; };
+		129321401AAC35360087DB8A /* Bg_user@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1293213F1AAC35360087DB8A /* Bg_user@2x.png */; };
 		12A320BC1AA7449700256CC9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 12A320BB1AA7449700256CC9 /* main.m */; };
 		12A320BF1AA7449700256CC9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 12A320BE1AA7449700256CC9 /* AppDelegate.m */; };
 		12A320C11AA7449700256CC9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12A320C01AA7449700256CC9 /* Images.xcassets */; };
@@ -137,6 +139,8 @@
 		095202251AA9DF1C00A12CBC /* ic_search_13@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_search_13@2x.png"; sourceTree = "<group>"; };
 		095202261AA9DF1C00A12CBC /* ic_search_14@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_search_14@2x.png"; sourceTree = "<group>"; };
 		095202271AA9DF1C00A12CBC /* ic_search_15@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_search_15@2x.png"; sourceTree = "<group>"; };
+		120FD4B31AAC47DD004DE916 /* PersonalInformationcell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalInformationcell.h; sourceTree = "<group>"; };
+		120FD4B41AAC47DD004DE916 /* PersonalInformationcell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalInformationcell.m; sourceTree = "<group>"; };
 		121D73E01AA97439008A9CBF /* preferentialArticleMallClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = preferentialArticleMallClient.h; sourceTree = "<group>"; };
 		121D73E11AA97439008A9CBF /* preferentialArticleMallClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = preferentialArticleMallClient.m; sourceTree = "<group>"; };
 		121D73E21AA97439008A9CBF /* preferentialBaseClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = preferentialBaseClass.h; sourceTree = "<group>"; };
@@ -220,6 +224,7 @@
 		129321121AAB89920087DB8A /* DTNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTNavigationController.m; sourceTree = "<group>"; };
 		129321141AABF68E0087DB8A /* ic_user@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_user@2x.png"; sourceTree = "<group>"; };
 		129321161AABF7460087DB8A /* ico_black_back_press@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico_black_back_press@2x.png"; sourceTree = "<group>"; };
+		1293213F1AAC35360087DB8A /* Bg_user@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Bg_user@2x.png"; sourceTree = "<group>"; };
 		12A320B61AA7449600256CC9 /* SMZDM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SMZDM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12A320BA1AA7449700256CC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		12A320BB1AA7449700256CC9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -370,6 +375,8 @@
 				128939901AAAE44E00CB6220 /* BaskInContentCell.m */,
 				121D73FB1AA9AF7E008A9CBF /* TheListViewCell.h */,
 				121D73FC1AA9AF7E008A9CBF /* TheListViewCell.m */,
+				120FD4B31AAC47DD004DE916 /* PersonalInformationcell.h */,
+				120FD4B41AAC47DD004DE916 /* PersonalInformationcell.m */,
 			);
 			name = TableViewcell;
 			sourceTree = "<group>";
@@ -386,6 +393,7 @@
 		125C4E4B1AA953DA009C1118 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				1293213F1AAC35360087DB8A /* Bg_user@2x.png */,
 				12B589A31AAB288500E2E163 /* icon@2x-5.png */,
 				12A320D91AA74FF500256CC9 /* intro_ip5_1.png */,
 				12A320DA1AA74FF500256CC9 /* intro_ip5_2.png */,
@@ -474,6 +482,8 @@
 		129321101AAB896C0087DB8A /* Third-PartyLibraries */ = {
 			isa = PBXGroup;
 			children = (
+				129321111AAB89920087DB8A /* DTNavigationController.h */,
+				129321121AAB89920087DB8A /* DTNavigationController.m */,
 			);
 			name = "Third-PartyLibraries";
 			sourceTree = "<group>";
@@ -509,8 +519,6 @@
 				121D74091AA9F26E008A9CBF /* Experience */,
 				121D73FE1AA9C878008A9CBF /* information */,
 				121D73EC1AA97469008A9CBF /* AllTools */,
-				129321111AAB89920087DB8A /* DTNavigationController.h */,
-				129321121AAB89920087DB8A /* DTNavigationController.m */,
 				12A320BD1AA7449700256CC9 /* AppDelegate.h */,
 				12A320BE1AA7449700256CC9 /* AppDelegate.m */,
 				12A320E31AA7657700256CC9 /* TheMainInterface.h */,
@@ -676,6 +684,7 @@
 				0952023D1AA9DF1C00A12CBC /* ic_search_14@2x.png in Resources */,
 				0952022E1AA9DF1C00A12CBC /* 4@2x.png in Resources */,
 				0952022D1AA9DF1C00A12CBC /* 3@2x.png in Resources */,
+				129321401AAC35360087DB8A /* Bg_user@2x.png in Resources */,
 				095202361AA9DF1C00A12CBC /* ic_search_07@2x.png in Resources */,
 				0952023E1AA9DF1C00A12CBC /* ic_search_15@2x.png in Resources */,
 				128939771AAAE15F00CB6220 /* ic_search_06@2x.png in Resources */,
@@ -787,6 +796,7 @@
 				12A320E51AA7657800256CC9 /* TheMainInterface.m in Sources */,
 				121D74071AA9C878008A9CBF /* InformationData.m in Sources */,
 				12D39D3F1AA84459000D783C /* TheListOf.m in Sources */,
+				120FD4B51AAC47DD004DE916 /* PersonalInformationcell.m in Sources */,
 				1289398C1AAAE40000CB6220 /* BaskInContentBaseClass.m in Sources */,
 				1225B1681AAB505900D9F485 /* AllTableView.m in Sources */,
 				1225B15F1AAB502900D9F485 /* CustomLine.m in Sources */,

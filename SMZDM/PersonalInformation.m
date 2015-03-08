@@ -7,6 +7,8 @@
 //
 
 #import "PersonalInformation.h"
+#import "TheListOf.h"
+
 
 @interface PersonalInformation ()
 
@@ -23,29 +25,82 @@
     
     UINavigationItem *item =[[UINavigationItem alloc]initWithTitle:@""];
     
-    [bar setBackgroundImage:[UIImage alloc] forBarMetrics:UIBarMetricsDefault];
-    
-    bar.shadowImage=[[UIImage alloc]init];
-    
-    [bar pushNavigationItem:item animated:NO];
-    
-    [self.view addSubview:bar];
-
-    UIButton *leftButton =[[UIButton alloc]initWithFrame:CGRectMake(10, 10, 8, 18)];
+    UIButton *leftButton =[[UIButton alloc]initWithFrame:CGRectMake(10, 30, 8, 18)];
     
     [leftButton setBackgroundImage:[UIImage imageNamed:@"ico_black_back_press@2x"] forState:UIControlStateNormal];
     
     [leftButton addTarget:self action:@selector(backAction) forControlEvents:UIControlEventTouchUpInside];
+
+    [bar setBackgroundImage:[UIImage alloc] forBarMetrics:UIBarMetricsDefault];
     
-//    UIBarButtonItem *leftItem =[[UIBarButtonItem alloc]initWithCustomView:leftButton];
-//    
-//    item.leftBarButtonItem =leftItem;
-//    
-//    [bar pushNavigationItem:item animated:NO];
+    [bar setBackgroundColor:[UIColor clearColor]];
     
-    [bar addSubview:leftButton];
+    UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithCustomView:leftButton];
+    
+    item.leftBarButtonItem = leftItem;
+    
+    [bar pushNavigationItem:item animated:NO];
+    
+    [self.view addSubview:bar];
+    
+    
+//    [bar addSubview:leftButton];
+    
+    scalingFigure=[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 320, 240)];
+    
+    scalingFigure.image =[UIImage imageNamed:@"Bg_user@2x"];
+    
+    [self.view addSubview:scalingFigure];
+    
+    _sceollView =[[UIScrollView alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    
+    _sceollView.backgroundColor=[UIColor clearColor];
+    
+    _sceollView.delegate=self;
+    
+    [self.view addSubview:_sceollView];
+
+    tableViewdo =[[UITableView alloc]initWithFrame:CGRectMake(0, 240, 320, self.view.frame.size.height)];
+    
+    tableViewdo.scrollEnabled=NO;
+    
+    tableViewdo.delegate =self;
+    
+    tableViewdo.dataSource =self;
+
+    tableViewdo.tag =101;
+    
+    [tableViewdo registerClass:[TheListOf class] forCellReuseIdentifier:@"cell"];
+    
+    [_sceollView addSubview:tableViewdo];
+
     
 }
+
+//-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+//    
+//    UIView *view =[UIView alloc]initWithFrame:<#(CGRect)#>
+//}
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 3;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 0;
+}
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+   
+    TheListOf *cell =(TheListOf *)[tableView dequeueReusableCellWithIdentifier:@"normal" forIndexPath:indexPath];
+    
+    return cell;
+
+}
+
+-(void)ceateTableHead{
+    
+}
+
+
 -(void)backAction{
     [self.navigationController popViewControllerAnimated:YES];
 }

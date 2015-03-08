@@ -44,6 +44,8 @@
     
     UINavigationItem *item = [[UINavigationItem alloc] initWithTitle:@"什么值得买"];
     
+    [bar setTitleTextAttributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:20]}];
+    
     [bar setBackgroundImage:[UIImage alloc] forBarMetrics:UIBarMetricsDefault];
     
     bar.shadowImage=[[UIImage alloc]init];
@@ -53,7 +55,7 @@
     [self.view addSubview:bar];
     
     UIButton * leftButton =[UIButton buttonWithType:UIButtonTypeCustom];
-    leftButton.frame =CGRectMake(20,27, 23, 23);
+    leftButton.frame =CGRectMake(15,27, 22, 22);
     [leftButton setBackgroundImage:[UIImage imageNamed:@"ic_search@2x.png"] forState:UIControlStateNormal];
     leftButton.tag=1000;
     [leftButton  addTarget:self action:@selector(searchShop:) forControlEvents:UIControlEventTouchUpInside];
@@ -63,7 +65,7 @@
 //    self.navigationItem.leftBarButtonItem=leftItem;
     
     UIButton * Button =[UIButton buttonWithType:UIButtonTypeCustom];
-    Button.frame =CGRectMake(277, 27, 23, 23);
+    Button.frame =CGRectMake(282, 27, 22, 22);
     [Button setBackgroundImage:[UIImage imageNamed:@"ic_user@2x.png"] forState:UIControlStateNormal];
     Button.tag =1001;
     [Button  addTarget:self action:@selector(searchShop:) forControlEvents:UIControlEventTouchUpInside];

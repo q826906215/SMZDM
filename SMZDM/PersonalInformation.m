@@ -22,8 +22,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    CGFloat width = [[UIScreen mainScreen] bounds].size.width;
-    
     self.view.backgroundColor =[UIColor whiteColor];
     
     UINavigationBar *bar =[[UINavigationBar alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 64)];
@@ -49,31 +47,19 @@
     
     [self.view addSubview:bar];
     
-//    view=[[UIView alloc]initWithFrame:CGRectMake(0, 0, 320, 320.0)];
-//    
-//    [self.view addSubview:view];
+    CGFloat width = [[UIScreen mainScreen] bounds].size.width;
     
-//    [self.view bringSubviewToFront:bar];
-    
-    scalingFigure=[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 320,240)];
+    scalingFigure=[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, width,240)];
     
     scalingFigure.image =[UIImage imageNamed:@"Bg_user@2x"];
     
-    [self.view addSubview:scalingFigure];
+    UIImageView *circle=[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 80, 80)];
     
-    [self.view bringSubviewToFront:bar];
+    [circle  setImage:[UIImage imageNamed:@"defaultAvatar_new@2x"]];
     
-//    _sceollView =[[UIScrollView alloc]initWithFrame:self.view.bounds];
-//    
-//    _sceollView.backgroundColor=[UIColor clearColor];
-//    
-//    _sceollView.contentSize =CGSizeMake(320, 300*7);
-//    
-//    _sceollView.delegate=self;
-//    
-//    [self.view addSubview:_sceollView];
-//    
-//   [self.view bringSubviewToFront:bar];
+    [circle  setCenter:scalingFigure.center];
+    
+    [circle.layer setMasksToBounds:YES];
 
     StrechyParallaxScrollView *strechy=[[StrechyParallaxScrollView alloc]initWithFrame:self.view.frame andTopView:scalingFigure];
     
@@ -82,32 +68,41 @@
     [self.view bringSubviewToFront:bar];
     
     float itemStartY = strechy.frame.size.height + 10;
-//    for (int i = 1; i <= 10; i++) {
-//        [strechy addSubview:[self scrollViewItemWithY:itemStartY andNumber:i]];
-//        itemStartY += 190;
-//    }
+    for (int i = 1; i <= 10; i++) {
+        [strechy addSubview:[self scrollViewItemWithY:itemStartY andNumber:i]];
+        itemStartY += 190;
+    }
     
     [strechy setContentSize:CGSizeMake(width, itemStartY)];
     
-    tableViewdo =[[UITableView alloc]initWithFrame:CGRectMake(0, 240,320,328)];
+    
+}
+
+//- (instancetype)initWithFrame:(CGRect)frame andTopView:(UIView *)topView{
+//    
+//}
+
+- (UITableView *)scrollViewItemWithY:(CGFloat)y andNumber:(int)num {
+    
+    
+    tableViewdo =[[UITableView alloc]initWithFrame:CGRectMake(0, 300,320,328)];
     
     tableViewdo.scrollEnabled=NO;
     
     tableViewdo.delegate =self;
+    
+    tableViewdo.backgroundColor =[UIColor redColor];
     
     tableViewdo.dataSource =self;
     tableViewdo.tag =101;
     
     [tableViewdo registerClass:[PersonalInformationcell class] forCellReuseIdentifier:@"cell"];
     
-    [strechy addSubview:tableViewdo];
+//    [ addSubview:tableViewdo];
+    
+    
+    return tableViewdo;
 }
-//- (UITableView *)scrollViewItemWithY:(CGFloat)y andNumber:(int)num {
-//    
-//    
-//    
-//    return tableViewdo;
-//}
 
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{

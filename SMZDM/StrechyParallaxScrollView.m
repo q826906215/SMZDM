@@ -86,6 +86,7 @@
         
         [self.topView setFrame:CGRectMake(0, 0, newW, newH)];
         [self.topView setCenter:CGPointMake(self.center.x, self.topView.center.y)];
+    
 
 
     }

@@ -663,7 +663,6 @@
         [refreshControl endRefreshing];
     });
 }
-     
 -(void)preferential{
     
     [refreshControl1 beginRefreshing];
@@ -681,7 +680,6 @@
         [refreshControl1 endRefreshing];
     });
 }
-
 -(void)refresshHowBlog{
     [refreshControl2 beginRefreshing];
     
@@ -697,7 +695,6 @@
         [refreshControl2 endRefreshing];
     });
 }
-
 -(void)refresshZowBlog{
     [refreshControl3 beginRefreshing];
     double delayInSeconds = 4.0;

@@ -22,6 +22,8 @@
     
     BaskInContentBaseClass *contentCless;
     
+    foundBaseClass *foundClass;
+    
     ExperienceBaseClass *experienceCless;
     
     InformationBaseClass *informationClass;
@@ -39,6 +41,8 @@
     UITableView *preferential;
     
     UITableView *haiTao;
+    
+    UITableView *found;
     
     UITableView *baskinContent;
     
@@ -62,5 +66,6 @@
     int offsetx;
     
 }
+
 
 @end

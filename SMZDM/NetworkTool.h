@@ -14,9 +14,11 @@
 +(void)getFistPageSelectDataCompletionBlock:(void (^)(NSDictionary *dic))block;
 +(void)getFistPagePreferentialDataCompletionBlock:(void (^)(NSDictionary *dic))block;
 +(void)getFistPageHaiTaoDataCompletionBlock:(void (^)(NSDictionary *dic))block;
++(void)getFistPagefoundCompletionBlock:(void (^)(NSDictionary *dic))block;
 +(void)getFistPageBaskInContentDataCompletionBlock:(void (^)(NSDictionary *dic))block;
 +(void)getFistPageExperienceDataCompletionBlock:(void (^)(NSDictionary *dic))block;
 +(void)getFistPageInformationDataCompletionBlock:(void (^)(NSDictionary *dic))block;
+
 //----------------日排行－－－－－－－－－－－－
 +(void)getDayListIndex:(NSInteger)sender CompletionBlock:(void(^)(NSDictionary * dic))block ;
 

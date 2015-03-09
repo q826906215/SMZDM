@@ -107,6 +107,11 @@
 		12CE57051AAD757700B86411 /* bg_btn_loading@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12CE57041AAD757700B86411 /* bg_btn_loading@2x.png */; };
 		12CE57071AAD7D2C00B86411 /* ico_psd@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12CE57061AAD7D2C00B86411 /* ico_psd@2x.png */; };
 		12CE57091AAD7D3E00B86411 /* ico_user@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12CE57081AAD7D3E00B86411 /* ico_user@2x.png */; };
+		12CE570C1AAD862D00B86411 /* FoundCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 12CE570B1AAD862D00B86411 /* FoundCell.m */; };
+		12CE57161AAD8A8D00B86411 /* foundArticleMallClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 12CE570F1AAD8A8D00B86411 /* foundArticleMallClient.m */; };
+		12CE57171AAD8A8D00B86411 /* foundBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 12CE57111AAD8A8D00B86411 /* foundBaseClass.m */; };
+		12CE57181AAD8A8D00B86411 /* foundData.m in Sources */ = {isa = PBXBuildFile; fileRef = 12CE57131AAD8A8D00B86411 /* foundData.m */; };
+		12CE57191AAD8A8D00B86411 /* foundRows.m in Sources */ = {isa = PBXBuildFile; fileRef = 12CE57151AAD8A8D00B86411 /* foundRows.m */; };
 		12D39D3F1AA84459000D783C /* TheListOf.m in Sources */ = {isa = PBXBuildFile; fileRef = 12D39D3E1AA84459000D783C /* TheListOf.m */; };
 		12D39DBB1AA89E6E000D783C /* SelectBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 12D39DB61AA89E6E000D783C /* SelectBaseClass.m */; };
 		12D39DBC1AA89E6E000D783C /* SelectData.m in Sources */ = {isa = PBXBuildFile; fileRef = 12D39DB81AA89E6E000D783C /* SelectData.m */; };
@@ -265,6 +270,16 @@
 		12CE57041AAD757700B86411 /* bg_btn_loading@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_btn_loading@2x.png"; sourceTree = "<group>"; };
 		12CE57061AAD7D2C00B86411 /* ico_psd@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico_psd@2x.png"; sourceTree = "<group>"; };
 		12CE57081AAD7D3E00B86411 /* ico_user@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico_user@2x.png"; sourceTree = "<group>"; };
+		12CE570A1AAD862D00B86411 /* FoundCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoundCell.h; sourceTree = "<group>"; };
+		12CE570B1AAD862D00B86411 /* FoundCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoundCell.m; sourceTree = "<group>"; };
+		12CE570E1AAD8A8D00B86411 /* foundArticleMallClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = foundArticleMallClient.h; sourceTree = "<group>"; };
+		12CE570F1AAD8A8D00B86411 /* foundArticleMallClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = foundArticleMallClient.m; sourceTree = "<group>"; };
+		12CE57101AAD8A8D00B86411 /* foundBaseClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = foundBaseClass.h; sourceTree = "<group>"; };
+		12CE57111AAD8A8D00B86411 /* foundBaseClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = foundBaseClass.m; sourceTree = "<group>"; };
+		12CE57121AAD8A8D00B86411 /* foundData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = foundData.h; sourceTree = "<group>"; };
+		12CE57131AAD8A8D00B86411 /* foundData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = foundData.m; sourceTree = "<group>"; };
+		12CE57141AAD8A8D00B86411 /* foundRows.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = foundRows.h; sourceTree = "<group>"; };
+		12CE57151AAD8A8D00B86411 /* foundRows.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = foundRows.m; sourceTree = "<group>"; };
 		12D39D3D1AA84459000D783C /* TheListOf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TheListOf.h; sourceTree = "<group>"; };
 		12D39D3E1AA84459000D783C /* TheListOf.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TheListOf.m; sourceTree = "<group>"; };
 		12D39DB51AA89E6E000D783C /* SelectBaseClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectBaseClass.h; sourceTree = "<group>"; };
@@ -393,6 +408,8 @@
 			children = (
 				12D39D3D1AA84459000D783C /* TheListOf.h */,
 				12D39D3E1AA84459000D783C /* TheListOf.m */,
+				12CE570A1AAD862D00B86411 /* FoundCell.h */,
+				12CE570B1AAD862D00B86411 /* FoundCell.m */,
 				1289398F1AAAE44E00CB6220 /* BaskInContentCell.h */,
 				128939901AAAE44E00CB6220 /* BaskInContentCell.m */,
 				121D73FB1AA9AF7E008A9CBF /* TheListViewCell.h */,
@@ -549,6 +566,7 @@
 				12D39DB41AA89E6E000D783C /* Select */,
 				121D73DF1AA97439008A9CBF /* preferential */,
 				121D73EE1AA985D7008A9CBF /* HaiTao */,
+				12CE570D1AAD8A8D00B86411 /* found */,
 				128939851AAAE40000CB6220 /* BaskInContent */,
 				121D74091AA9F26E008A9CBF /* Experience */,
 				121D73FE1AA9C878008A9CBF /* information */,
@@ -594,6 +612,21 @@
 				12A320CE1AA7449700256CC9 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		12CE570D1AAD8A8D00B86411 /* found */ = {
+			isa = PBXGroup;
+			children = (
+				12CE570E1AAD8A8D00B86411 /* foundArticleMallClient.h */,
+				12CE570F1AAD8A8D00B86411 /* foundArticleMallClient.m */,
+				12CE57101AAD8A8D00B86411 /* foundBaseClass.h */,
+				12CE57111AAD8A8D00B86411 /* foundBaseClass.m */,
+				12CE57121AAD8A8D00B86411 /* foundData.h */,
+				12CE57131AAD8A8D00B86411 /* foundData.m */,
+				12CE57141AAD8A8D00B86411 /* foundRows.h */,
+				12CE57151AAD8A8D00B86411 /* foundRows.m */,
+			);
+			path = found;
 			sourceTree = "<group>";
 		};
 		12D39DB41AA89E6E000D783C /* Select */ = {
@@ -846,7 +879,12 @@
 				121D73F61AA985D7008A9CBF /* HaiTaoData.m in Sources */,
 				12D39DBC1AA89E6E000D783C /* SelectData.m in Sources */,
 				1225B1691AAB505900D9F485 /* YHcell.m in Sources */,
+				12CE57181AAD8A8D00B86411 /* foundData.m in Sources */,
+				12CE57161AAD8A8D00B86411 /* foundArticleMallClient.m in Sources */,
+				12CE57171AAD8A8D00B86411 /* foundBaseClass.m in Sources */,
 				1230C8DD1AAC91D50014F5BD /* StrechyParallaxScrollView.m in Sources */,
+				12CE57191AAD8A8D00B86411 /* foundRows.m in Sources */,
+				12CE570C1AAD862D00B86411 /* FoundCell.m in Sources */,
 				1276842C1AA78FEE00B09810 /* ScrollRows.m in Sources */,
 				1276842B1AA78FEE00B09810 /* ScrollData.m in Sources */,
 				1289398E1AAAE40000CB6220 /* BaskInContentRows.m in Sources */,

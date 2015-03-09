@@ -27,3 +27,7 @@
 #import "BaskInContentBaseClass.h"
 #import "BaskInContentRows.h"
 #import "BaskInContentData.h"
+#import "foundData.h"
+#import "foundRows.h"
+#import "foundBaseClass.h"
+#import "foundArticleMallClient.h"

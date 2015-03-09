@@ -73,7 +73,7 @@
         // --右边
             NSDictionary * dataDic1= arr[indexPath*2+1];
             NSString * strPic1 =[dataDic1  objectForKey:@"article_pic"];
-            [_leftImageR  sd_setImageWithURL:[NSURL URLWithString:strPic1] ];
+            [_leftImageR  sd_setImageWithURL:[NSURL URLWithString:strPic1]];
             _leftLabR.text = [dataDic1 objectForKey:@"article_mall"];
             _rightLabR.text =[dataDic1 objectForKey:@"article_format_date"];
             self.middleLabR.text =[dataDic1 objectForKey:@"article_title"];

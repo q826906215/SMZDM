@@ -15,6 +15,7 @@
 #import "SearchVC.h"
 #import "BaskInContentCell.h"
 #import "PersonalInformation.h"
+#import "FoundCell.h"
 
 
 
@@ -260,6 +261,35 @@
     
     [haiTao addSubview:refreshControl2];
     
+    [NetworkTool getFistPagefoundCompletionBlock:^(NSDictionary *dic) {
+        
+        foundClass =[foundBaseClass modelObjectWithDictionary:dic];
+        
+        [found reloadData];
+    }];
+    
+    found =[[UITableView alloc]initWithFrame:CGRectMake(960, 0, 320, 454)];
+    
+    found.delegate =self;
+    
+    found.dataSource =self ;
+    
+    [found registerClass:[FoundCell class] forCellReuseIdentifier:@"found"];
+    
+    found.rowHeight =250;
+    
+    found.tag =103;
+    
+    [hostInterface addSubview:found];
+    
+    refreshControl3=[[UIRefreshControl alloc]init];
+    
+    [refreshControl3 addTarget:self action:@selector(refresshZowBlog) forControlEvents:UIControlEventValueChanged];
+    
+    [found addSubview:refreshControl3];
+    
+    
+    
     [NetworkTool getFistPageBaskInContentDataCompletionBlock:^(NSDictionary *dic) {
         
         contentCless = [BaskInContentBaseClass modelObjectWithDictionary:dic];
@@ -494,7 +524,7 @@
     }else if(tableView.tag == 102){
         return haiTaoClass.data.rows.count;
     }else if(tableView.tag == 103){
-        return haiTaoClass.data.rows.count;
+        return foundClass.data.rows.count/2;
     }else if(tableView.tag == 104){
         return contentCless.data.rows.count;
     }else if(tableView.tag == 105){
@@ -568,7 +598,23 @@
         return cell;
         
     }else if (tableView.tag == 103){
-        TheListViewCell *cell =(TheListViewCell *)[tableView dequeueReusableCellWithIdentifier:@"information"forIndexPath:indexPath];
+        FoundCell *cell =(FoundCell *)[tableView dequeueReusableCellWithIdentifier:@"found"forIndexPath:indexPath];
+        int  dataDic = indexPath.row*2;
+        //--左边
+        [cell.leftImage sd_setImageWithURL:[NSURL URLWithString:[[foundClass.data.rows objectAtIndex:dataDic]articlePic]]];
+        cell.leftLab.text = [[foundClass.data.rows objectAtIndex:dataDic]articleMall];
+        cell.rightLab.text =[[foundClass.data.rows objectAtIndex:dataDic]articleFormatDate];
+        cell.middleLab.text =[[foundClass.data.rows objectAtIndex:dataDic]articleTitle];
+        cell.thirdRowLab.text=[[foundClass.data.rows objectAtIndex:dataDic]articlePrice];
+        cell.downLab.text =[[foundClass.data.rows objectAtIndex:dataDic]articleComment];
+        // --右边
+        int dataDic1= indexPath.row*2+1;
+        [cell.leftImageR  sd_setImageWithURL:[NSURL URLWithString:[[foundClass.data.rows objectAtIndex:dataDic1]articlePic]]];
+        cell.leftLabR.text = [[foundClass.data.rows objectAtIndex:dataDic1]articleMall];
+        cell.rightLabR.text =[[foundClass.data.rows objectAtIndex:dataDic1]articleFormatDate];
+        cell.middleLabR.text =[[foundClass.data.rows objectAtIndex:dataDic1]articleTitle];
+        cell.thirdRowLabR.text=[[foundClass.data.rows objectAtIndex:dataDic1]articlePrice];
+        cell.downLabR.text =[[foundClass.data.rows objectAtIndex:dataDic1]articleComment];
         
         return cell;
         
@@ -706,6 +752,14 @@
 }
 -(void)refresshZowBlog{
     [refreshControl3 beginRefreshing];
+    
+    [NetworkTool getFistPagefoundCompletionBlock:^(NSDictionary *dic) {
+        
+        foundClass =[foundBaseClass modelObjectWithDictionary:dic];
+        
+        [found reloadData];
+    }];
+
     double delayInSeconds = 4.0;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){

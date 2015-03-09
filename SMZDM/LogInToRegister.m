@@ -100,7 +100,7 @@
     
     diyi.frame =CGRectMake(50, 0, 320, 50);
     
-    diyi.placeholder =@"QQ号/手机号/邮箱";
+    diyi.placeholder =@"邮箱/用户名";
     
     diyi.borderStyle =UITextBorderStyleNone;
     
@@ -123,7 +123,8 @@
     button.frame =CGRectMake(230, 50, 70, 50);
     
     [button setTitle:@"忘记密码" forState:UIControlStateNormal];
-    button.layer.cornerRadius =15;
+    
+    button.layer.cornerRadius =10;
     
     button.layer.masksToBounds =YES;
     

@@ -111,6 +111,13 @@
     
     [articleClassification release];
     
+    UIImageView *line = [[UIImageView alloc] init];
+    line.backgroundColor = [UIColor lightGrayColor];
+    line.alpha = .2;
+    line.frame = CGRectMake(0,113, self.view.frame.size.width, 1);
+    [self.view addSubview:line];
+    [line release];
+    
     NSArray *titlearray =@[@"精选",@"优惠",@"海淘",@"发现",@"晒物",@"经验",@"资讯",];
     
     for (int i=0; i<7; i++) {
@@ -161,7 +168,7 @@
     
     hostInterface.alwaysBounceHorizontal =YES;
     
-    hostInterface.showsHorizontalScrollIndicator =YES;
+    hostInterface.showsHorizontalScrollIndicator =NO;
     
     hostInterface.bounces=YES;
     
@@ -361,7 +368,9 @@
     
     hostInterfaceView.alwaysBounceHorizontal =YES;
     
-    hostInterfaceView.showsHorizontalScrollIndicator =YES;
+    hostInterfaceView.showsVerticalScrollIndicator =FALSE;
+    
+    hostInterfaceView.showsHorizontalScrollIndicator =NO;
     
     hostInterfaceView.bounces=YES;
     

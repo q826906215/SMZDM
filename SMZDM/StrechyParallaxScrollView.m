@@ -45,6 +45,8 @@
         [self addSubview:self.topView];
         
         self.scrollView = [[UIScrollView alloc] initWithFrame:frame];
+        
+        self.scrollView.showsVerticalScrollIndicator=NO;
         [self.scrollView setDelegate:self];
         [self addSubview:self.scrollView];
 

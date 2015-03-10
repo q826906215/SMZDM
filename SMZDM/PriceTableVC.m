@@ -1,39 +1,54 @@
+//
+//  PriceTableVC.m
+//  SMZDM
+//
+//  Created by dushuai on 3/9/15.
+//  Copyright (c) 2015 布鲁斯.韦恩 . All rights reserved.
+//
 
-//
-//  AllTableView.m
-//  WhatToBuy
-//
-//  Created by dushuai on 3/6/15.
-//  Copyright (c) 2015 dushuai. All rights reserved.
-//
-
-#import "AllTableView.h"
-#import "YHcell.h"
+#import "PriceTableVC.h"
+#import "PriceCell.h"
 #import "NetworkTool.h"
 
-
-@interface AllTableView ()
+@interface PriceTableVC ()
 
 @end
 
-@implementation AllTableView
+@implementation PriceTableVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    
+    
     [self downView];
     [self topView];
-        NSMutableArray* youHuiArray = [NSMutableArray new];
-     NSMutableArray* haiTaoArray = [NSMutableArray new];
-     NSMutableArray* showArray = [NSMutableArray new];
-     NSMutableArray* exArray = [NSMutableArray new];
-     NSMutableArray*  newsArray = [NSMutableArray new];
-     NSMutableArray* findArray = [NSMutableArray new];
+    NSMutableArray* youHuiArray = [NSMutableArray new];
+    NSMutableArray* haiTaoArray = [NSMutableArray new];
+    NSMutableArray* showArray = [NSMutableArray new];
+    NSMutableArray* exArray = [NSMutableArray new];
+    NSMutableArray*  newsArray = [NSMutableArray new];
+    NSMutableArray* findArray = [NSMutableArray new];
     _bigArray = [[NSMutableArray arrayWithObjects:youHuiArray,haiTaoArray,findArray,showArray,exArray,newsArray, nil] retain];
     
-    [self sendRequest];
     
-       for (int i= 0; i < 6; i++)
+    
+    for (int i = 0; i< 2; i++)
+    {
+        [NetworkTool  getPriceIndex:i CompletionBlock:^(NSDictionary *dic){
+            
+            NSDictionary * dataDic = dic;
+            //--
+            [[_bigArray  objectAtIndex:i] addObjectsFromArray:[[dataDic objectForKey:@"data"] objectForKey:@"rows" ]];
+            _number=i;
+            UITableView * table = (UITableView *)[self.view viewWithTag:i+50];
+            [table  reloadData];
+            
+        }];
+    }
+    
+    for (int i= 0; i < 2; i++)
     {
         _publicTable = [[UITableView alloc] initWithFrame:CGRectMake(i * 320, 0, 320,575-101) style:UITableViewStylePlain];
         _publicTable.delegate=self;
@@ -41,77 +56,38 @@
         _publicTable.tag= i + 50;
         [_scrollViewDown addSubview:_publicTable];
         
-        }
+    }
 }
-
-
-
--(void)sendRequest
-{
-    
-    float value = [[[NSUserDefaults standardUserDefaults] objectForKey:@"button"] floatValue];
-    
-         for (int i = 0; i< 6; i++)
-      {
-        [NetworkTool  getDayListIndex:i getValue:value   CompletionBlock:^(NSDictionary *dic){
-        
-        NSDictionary * dataDic = dic;
-        //--
-        [[_bigArray  objectAtIndex:i] addObjectsFromArray:[[dataDic objectForKey:@"data"] objectForKey:@"rows" ]];
-        UITableView * table = (UITableView *)[self.view viewWithTag:i+50];
-        [table  reloadData];
-        }];
-      }
-    
-    
-}
-
-
-
 
 
 #pragma mark- UITableViewDelegate
 //
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-     NSMutableArray *array = [_bigArray objectAtIndex:_number];
-
-    if (_number==2) {
-        return  array.count/2;
-    }else{
-       return  array.count ;
-    }
+    NSMutableArray *array = [_bigArray objectAtIndex:_number];
+    
+           return  array.count ;
+    
 }
 
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    YHcell * cell  =[_publicTable dequeueReusableCellWithIdentifier:@"cell"];
+    PriceCell * cell  =[_publicTable dequeueReusableCellWithIdentifier:@"cell"];
     if (!cell) {
-        cell = [[[YHcell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"] autorelease];
+        cell = [[[PriceCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"] autorelease];
     }
     
-   [cell getDayList:tableView.tag-50 dataArray:[_bigArray objectAtIndex:_number] indexRow:indexPath.row];
-
+    [cell getDayList:tableView.tag-50 dataArray:[_bigArray objectAtIndex:_number] indexRow:indexPath.row];
+    
     return cell;
 }
 
 #pragma mark - UITableViewDelegate
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (_number==2) {
-        return 290;
-    }else if (_number==3)
-    {
-        return 200;
-    }else if (_number==4 || _number==5)
-    {
-        return 190;
-    }
-    else
-    {
-        return 135;
-    }
+          return 135;
+    
 }
 
 
@@ -131,10 +107,10 @@
 {
     
     UIView * aView =[[UIView alloc]init];
-    aView.frame = CGRectMake(0 , 0 , 320, 100);
+    aView.frame = CGRectMake(0, 0, 320, 100);
     [aView  setBackgroundColor:[UIColor  whiteColor]];
     [self.view addSubview:aView];
-     [aView release];
+    [aView release];
     
     UIButton * button =[UIButton buttonWithType:UIButtonTypeSystem];
     [button  setBackgroundImage:[UIImage imageNamed:@"ic_red_back@2x"] forState:UIControlStateNormal];
@@ -143,33 +119,13 @@
     [aView addSubview:button];
     
     
-    float value = [[[NSUserDefaults standardUserDefaults] objectForKey:@"button"] floatValue];
-    if (value==10) {
     UILabel * lab =[[UILabel alloc] init];
-    lab.text  = @"日排行";
+    lab.text  = @" 筛选“神价格” ";
     [lab setFont:[UIFont systemFontOfSize:25]];
-    lab.frame = CGRectMake(120, 30,100 , 25);
+    lab.frame = CGRectMake(80, 30,170 , 25);
     [aView addSubview:lab] ;
     [lab release];
-
-    } else
-    {
-    NSArray * titleArray =@[@"电脑数码",@"家用电器",@"运动户外",@"服饰鞋包",@"个护化妆",@"母婴用品",@"日用百货",@"食品保健",@"礼品钟表",@"图书音像",@"玩模乐器",@"办公设备",@"家具家装",@"汽车用品",@"其他分类"];
-    UILabel * lab =[[UILabel alloc]init];
-    lab.frame = CGRectMake(120, 30, 100, 25);
-    lab.textAlignment =NSTextAlignmentCenter;
-    lab.text=[titleArray objectAtIndex:(value-20)];
-    [lab setFont:[UIFont systemFontOfSize:25]];
-    lab.textColor = [UIColor colorWithRed:0.1 green:0.1 blue:0.1 alpha:1];
-    [aView addSubview:lab];
     
-    [lab release];
-
-    }
-    
-       
-    
-        
     _scrollViewTop =[[UIScrollView alloc] init];
     _scrollViewTop.frame = CGRectMake(0, 50, 320,50 );
     _scrollViewTop.contentSize = CGSizeMake(400, 40);
@@ -177,19 +133,19 @@
     //    scrollView.backgroundColor =[UIColor grayColor];
     [aView addSubview: _scrollViewTop];
     
-    NSArray * array =@[@"优惠",@"海淘",@"发现",@"晒物",@"经验",@"资讯"];
-    int lie = 6;
-    for (int i= 0; i < 6; i++) {
+    NSArray * array =@[@"优惠",@"海淘"];
+    int lie = 2;
+    for (int i= 0; i < 2; i++) {
         int    width = 40;
         float  colum = i% lie;
         
-        float  interval =  (400 - width* lie)/lie;
+        float  interval =  (200 - width* lie)/lie;
         
-       UIButton* btnList =[UIButton buttonWithType:UIButtonTypeSystem];
+        UIButton* btnList =[UIButton buttonWithType:UIButtonTypeSystem];
         btnList .frame =CGRectMake( 10+colum * (width+interval), 5, width, 40);
         [btnList.titleLabel setFont:[UIFont systemFontOfSize:20]];
         btnList.tag = i+ 100;
-       
+        
         [btnList addTarget:self action:@selector(clickBtn:) forControlEvents:UIControlEventTouchUpInside];
         
         
@@ -210,7 +166,7 @@
     [_scrollViewTop addSubview:_downView];
     
     UIView * lineView=[UIView new];
-    lineView.frame = CGRectMake(0 , 100 , 320, 1);
+    lineView.frame = CGRectMake(0,100 , 320, 1);
     lineView.backgroundColor =[UIColor colorWithRed:0.9 green:0.9 blue:0.9 alpha:1];
     [aView addSubview:lineView];
     [lineView release];
@@ -221,7 +177,7 @@
 {
     _scrollViewDown =[[UIScrollView alloc] init];
     _scrollViewDown.frame =CGRectMake(0, 101, 320,575-101 );
-     _scrollViewDown.contentSize = CGSizeMake(320*6, 575-101);
+    _scrollViewDown.contentSize = CGSizeMake(320*2, 575-101);
     _scrollViewDown.backgroundColor=[UIColor whiteColor];
     _scrollViewDown.pagingEnabled=YES;
     _scrollViewDown.delegate=self;
@@ -236,16 +192,16 @@
     long   index = sender.tag-100;
     _scrollViewDown.contentOffset = CGPointMake(index * 320, 0);
     [UIView animateWithDuration:0.5 animations:^{
-        _downView.frame =CGRectMake(index* (160/6+40) + 10, 48, 40, 2);
+        _downView.frame =CGRectMake(index* 100 + 10, 48, 40, 2);
     }];
-    for (int i=0; i<6; i++)
+    for (int i=0; i<2; i++)
     {
         UIButton * btn =(UIButton *)[self.view viewWithTag:i + 100];
         
         [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithLong:btn.tag] forKey:@"tag"];
         
         if (sender.tag ==btn.tag) {
-            [sender setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+            [sender setTitleColor:[UIColor redColor] forState:UIControlStateNormal];   
         }
         else
         {
@@ -253,13 +209,9 @@
         }
     }
     _number = sender.tag -100;
-    UITableView * table =(UITableView*) [self.view viewWithTag:sender.tag-50];
+    UITableView * table =(UITableView*)[self.view viewWithTag:sender.tag-50];
     [table reloadData];
     
-    
-    
-    
-   _scrollViewTop.contentOffset = CGPointMake(index*16, 0);
 }
 
 
@@ -270,10 +222,10 @@
     _page = _scrollViewDown.contentOffset.x/320;
     
     [UIView animateWithDuration:0.2 animations:^{
-        _downView.frame =CGRectMake(_page* (160/6+40) + 10, 48, 40, 2);
+        _downView.frame =CGRectMake(_page* (100) + 10, 48, 40, 2);
     }];
     
-    for (int i = 0; i<6; i++) {
+    for (int i = 0; i<2; i++) {
         UIButton * btn=(UIButton*)[self.view viewWithTag:i+100];
         if (btn.tag==_page+100) {
             [btn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
@@ -285,15 +237,11 @@
         }
     }
     
-    _scrollViewTop.contentOffset = CGPointMake(_page*16, 0);
-    
-    
-     _number = _page;
+    _scrollViewTop.contentOffset = CGPointMake(_page*1, 0);
+    _number = _page;
     UITableView * table =(UITableView*) [self.view viewWithTag:_page+50];
     [table reloadData];
-    
-    
-    
+
 }
 
 
@@ -316,13 +264,19 @@
     [super dealloc];
 }
 
-
-
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
 
 @end

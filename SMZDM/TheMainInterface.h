@@ -66,6 +66,6 @@
     int offsetx;
     
 }
-
+@property (nonatomic, assign)BOOL isMain;
 
 @end

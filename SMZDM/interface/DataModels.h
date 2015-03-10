@@ -31,3 +31,8 @@
 #import "foundRows.h"
 #import "foundBaseClass.h"
 #import "foundArticleMallClient.h"
+
+#import "PrefeArticleCategory.h"
+#import "PrefeData.h"
+#import "PrefeBaseClass.h"
+#import "PrefeArticleMallClient.h"

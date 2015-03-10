@@ -1,16 +1,14 @@
 //
-//  YHcell.h
-//  WhatToBuy
+//  PriceCell.h
+//  SMZDM
 //
-//  Created by dushuai on 3/5/15.
-//  Copyright (c) 2015 dushuai. All rights reserved.
+//  Created by dushuai on 3/9/15.
+//  Copyright (c) 2015 布鲁斯.韦恩 . All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface YHcell : UITableViewCell
-
-// ----在非arc 一般用retain （长久持有对象id ）       copy复制    assign （delegate ，整形数据）
+@interface PriceCell : UITableViewCell
 @property (nonatomic,retain)UIImageView* peopleImage;
 @property (nonatomic, retain) UIImageView * leftImage;
 @property (nonatomic,retain) UIImageView * smallImage;
@@ -24,15 +22,8 @@
 @property (nonatomic,retain)UILabel * filterLab;
 //------------
 
-@property (nonatomic, retain) UIImageView * leftImageR;
-@property (nonatomic,retain) UIImageView * smallImageR;
 
 @property(nonatomic, retain) UILabel * leftLabR;
-@property (nonatomic,retain) UILabel *  rightLabR;
-@property (nonatomic, retain) UILabel * middleLabR;
-@property (nonatomic, retain) UILabel *   thirdRowLabR;
-@property (nonatomic, retain) UILabel *  downLabR;
-
 
 
 
@@ -40,10 +31,6 @@
 
 
 -(void)getDayList:(NSInteger)sender dataArray:(NSArray*)arr  indexRow:(NSInteger)indexPath;
-
-
-
-
 
 
 @end

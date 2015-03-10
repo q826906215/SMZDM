@@ -19,7 +19,21 @@
 +(void)getFistPageExperienceDataCompletionBlock:(void (^)(NSDictionary *dic))block;
 +(void)getFistPageInformationDataCompletionBlock:(void (^)(NSDictionary *dic))block;
 
+//小数据
+
+
 //----------------日排行－－－－－－－－－－－－
-+(void)getDayListIndex:(NSInteger)sender CompletionBlock:(void(^)(NSDictionary * dic))block ;
++(void)getDayListIndex:(NSInteger)sender getValue:(NSInteger)value CompletionBlock:(void(^)(NSDictionary * dic))block;
+
+//---神价物
++(void)getPriceIndex:(NSInteger)sender  CompletionBlock:(void(^)(NSDictionary * dic))block ;
+// --白菜党
++(void)getCabbageIndex:(NSInteger)sender CompletionBlock:(void(^)(NSDictionary * dic))block ;
+//--奇葩物
++(void)getMiracheIndex:(NSInteger)sender CompletionBlock:(void(^)(NSDictionary * dic))block ;
+
+//--------------商城筛选－－－－－
+
++(void)getShopIndex:(NSInteger)sender getValue:(NSInteger)value CompletionBlock:(void(^)(NSDictionary * dic))block;
 
 @end

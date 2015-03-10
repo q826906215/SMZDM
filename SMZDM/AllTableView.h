@@ -8,21 +8,28 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AllTableView : UIViewController<UITableViewDataSource,UITableViewDelegate>
+@interface AllTableView : UIViewController<UIScrollViewDelegate,UITableViewDataSource,UITableViewDelegate>
 {
 //    //->
 //    @public
 //    
 //    UITableView         *_faborableTable;
     UIScrollView * _scrollViewDown;
+    UIScrollView * _scrollViewTop;
     UIView *  _downView ;
-    int       _number;
+    long       _number;
+    long        _page;
     
  }
 
 @property (nonatomic,retain)UITableView  *publicTable;
 
-@property (nonatomic,retain)NSMutableArray * dataArray;
+
+@property (nonatomic,retain)NSMutableArray * bigArray;
+
+
+
+-(void)sendRequest  ;
 
 
 

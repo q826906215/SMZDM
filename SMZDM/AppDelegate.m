@@ -28,10 +28,12 @@
     [self.window makeKeyAndVisible];
     
     
-    NSString * str = [[NSUserDefaults standardUserDefaults] objectForKey:@"first"];
-    if (!str) {
+    float  value= [[NSUserDefaults standardUserDefaults] integerForKey:@"first"];
+    if (value==0) {
+        [[NSUserDefaults standardUserDefaults]  setInteger:888 forKey:@"first"];
         [self firstIntoView];
-    }else
+    }
+    else
     {
         [self experience];
     }

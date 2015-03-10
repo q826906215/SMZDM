@@ -36,8 +36,6 @@
     
      bar.shadowImage=[[UIImage alloc]init];
     
-    [bar setBackgroundColor:[UIColor clearColor]];
-    
     [bar pushNavigationItem:item animated:YES];
     
     [self.view addSubview:bar];

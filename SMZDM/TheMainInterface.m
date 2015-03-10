@@ -16,6 +16,7 @@
 #import "BaskInContentCell.h"
 #import "PersonalInformation.h"
 #import "FoundCell.h"
+#import "GoodsDetails.h"
 
 
 
@@ -683,6 +684,48 @@
     }
     
 }
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    switch (tableView.tag) {
+        case 100:
+            break;
+        case 101:{
+            
+            
+            
+            GoodsDetails *news =[[GoodsDetails alloc]init];
+            
+            news.good =[preferentialClass.data.rows objectAtIndex:indexPath.row];
+            
+            [self.navigationController pushViewController:news animated:NO];
+            
+        }
+            
+            
+            break;
+        case 102:
+            
+            break;
+        case 103:
+            
+            break;
+        case 104:
+            
+            break;
+        case 105:
+            
+            break;
+        case 106:
+            
+            break;
+            
+        default:
+            break;
+    }
+    
+    
+    
+}
 #pragma mark -ScrollViewArticleClassification
 
 -(void)btnMove:(UIButton *)btn{
@@ -691,7 +734,7 @@
     
     float width=[btn.titleLabel.text sizeWithAttributes:dic].width;
     
-    [UIView animateWithDuration:0.5 animations:^{
+    [UIView animateWithDuration:0.2 animations:^{
        _markimage.bounds =CGRectMake(0, 0, width, 3);
         
         _markimage.center =CGPointMake(btn.center.x, 47.5);

@@ -26,7 +26,7 @@
     CGContextFillRect(context, rect);
     CGContextSetRGBFillColor(context, 0.8, 0.8, 0.8, 1);
     
-    CGContextFillRect(context, CGRectMake(160, 0, 1, 250));
+    CGContextFillRect(context, CGRectMake(160, 0, 1, 290));
     
 }
 

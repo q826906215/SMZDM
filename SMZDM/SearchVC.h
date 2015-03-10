@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "CustomLine.h"
-@interface SearchVC : UIViewController
+@interface SearchVC : UIViewController <UIScrollViewDelegate>
 {
     UIButton      *_button;
     UIButton      *_classBtn;
@@ -16,5 +16,12 @@
     UIView        *_downView;
     UITextField * _searchField;
     UIScrollView * _scrollView;
+    
+    UIScrollView    * _hoziScrollView;
+    
+    UIScrollView        *_rightScrollView;
+    
+    UIView              * _upAView;
+    
 }
 @end

@@ -1,16 +1,14 @@
 //
-//  YHcell.h
-//  WhatToBuy
+//  ShopCell.h
+//  SMZDM
 //
-//  Created by dushuai on 3/5/15.
-//  Copyright (c) 2015 dushuai. All rights reserved.
+//  Created by dushuai on 3/10/15.
+//  Copyright (c) 2015 布鲁斯.韦恩 . All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface YHcell : UITableViewCell
-
-// ----在非arc 一般用retain （长久持有对象id ）       copy复制    assign （delegate ，整形数据）
+@interface ShopCell : UITableViewCell
 @property (nonatomic,retain)UIImageView* peopleImage;
 @property (nonatomic, retain) UIImageView * leftImage;
 @property (nonatomic,retain) UIImageView * smallImage;
@@ -39,7 +37,7 @@
 
 
 
--(void)getDayList:(NSInteger)sender dataArray:(NSArray*)arr  indexRow:(NSInteger)indexPath;
+-(void)getShopList:(NSInteger)sender dataArray:(NSArray*)arr  indexRow:(NSInteger)indexPath;
 
 
 

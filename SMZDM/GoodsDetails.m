@@ -12,6 +12,15 @@
 #import "StrechyParallaxScrollView.h"
 #import "PrefeBaseClass.h"
 #import <UIImageView+WebCache.h>
+#import "LogInToRegister.h"
+#import <ShareSDK/ShareSDK.h>
+#import "AppDelegate.h"
+#import <TencentOpenAPI/QQApiInterface.h>
+#import <TencentOpenAPI/TencentOAuth.h>
+#import "WXApi.h"
+#import "WeiboApi.h"
+#import "WeiboSDK.h"
+#import <RennSDK/RennSDK.h>
 
 #define SCREEN_WIDTH [[UIScreen mainScreen] bounds].size.width
 
@@ -177,6 +186,83 @@
     
 
 }
+
+- (void)backBtnClick:(UIButton *)btn
+{
+    if (btn.tag==100) {
+        
+        [self.navigationController popViewControllerAnimated:NO];
+        
+    }else if (btn.tag ==101){
+        LogInToRegister *vc =[[LogInToRegister alloc]init];
+        
+        [self.navigationController pushViewController:vc animated:YES];
+        
+        
+    }else if(btn.tag==102){
+        
+        NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"ShareSDK" ofType:@"png"];
+        
+        //构造分享内容
+        id<ISSContent> publishContent = [ShareSDK content:@"分享内容"
+                                           defaultContent:@"测试一下"
+                                                    image:[ShareSDK imageWithPath:imagePath]
+                                                    title:@"ShareSDK"
+                                                      url:@"http://www.mob.com"
+                                              description:@"这是一条测试信息"
+                                                mediaType:SSPublishContentMediaTypeNews];
+        //创建弹出菜单容器
+        id<ISSContainer> container = [ShareSDK container];
+        
+        [container setIPadContainerWithView:btn arrowDirect:UIPopoverArrowDirectionUp];
+        
+        //弹出分享菜单
+        [ShareSDK showShareActionSheet:container
+                             shareList:nil
+                               content:publishContent
+                         statusBarTips:YES
+                           authOptions:nil
+                          shareOptions:nil
+                                result:^(ShareType type, SSResponseState state, id<ISSPlatformShareInfo> statusInfo, id<ICMErrorInfo> error, BOOL end) {
+                                    
+                                    if (state == SSResponseStateSuccess)
+                                    {
+                                        NSLog(NSLocalizedString(@"TEXT_ShARE_SUC", @"分享成功"));
+                                    }
+                                    else if (state == SSResponseStateFail)
+                                    {
+                                        NSLog(NSLocalizedString(@"TEXT_ShARE_FAI", @"分享失败,错误码:%d,错误描述:%@"), [error errorCode], [error errorDescription]);
+                                    }
+                                }];
+        
+    }else if(btn.tag ==103){
+        
+        NSURL *url=[NSURL URLWithString:self.good.articleLink];
+        
+        NSURLRequest*urlRequest =[NSURLRequest requestWithURL:url];
+        
+        
+        web =[[UIWebView alloc]init];
+        
+        [web setScalesPageToFit:NO];
+        
+        [web loadRequest:urlRequest];
+        
+        web.delegate =self;
+        
+        [self.view addSubview:web];
+        
+        
+    }else if (btn.tag ==104){
+        
+        
+        
+    }else  if(btn.tag ==105){
+        
+    }
+    
+}
+
 - (void)webViewDidFinishLoad:(UIWebView *)aWebView {
     
     CGRect frame = aWebView.frame;
@@ -189,7 +275,6 @@
     NSLog(@"size: %f, %f", fittingSize.width, fittingSize.height);
     
     webView.frame = CGRectMake(0, 300, 320, fittingSize.height);
-    
     strechy.contentSize = CGSizeMake(320, 568-268+webView.frame.size.height);
     
 }
@@ -225,22 +310,6 @@
 
 
 
-- (void)backBtnClick:(UIButton *)btn
-{
-    if (btn.tag==100) {
-        
-        [self.navigationController popViewControllerAnimated:NO];
-        
-    }else if (btn.tag ==101){
-        
-        
-    }else if(btn.tag==102){
-        
-    }else{
-        
-    }
-    
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

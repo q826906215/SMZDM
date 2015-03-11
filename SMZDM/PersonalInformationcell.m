@@ -47,7 +47,7 @@
     [self   addSubview:imageV];
     
     UIButton * btn =[UIButton buttonWithType:UIButtonTypeCustom];
-    btn.frame =CGRectMake(10, 15, 30, 30);  
+    btn.frame =CGRectMake(10, 15, 30, 30);
     [btn setBackgroundImage:[UIImage imageNamed:[NSString stringWithFormat:@"%d",20+indexPath]] forState:UIControlStateNormal];
     [imageV addSubview:btn];
 

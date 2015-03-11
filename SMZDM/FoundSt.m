@@ -12,6 +12,7 @@
 #import "StrechyParallaxScrollView.h"
 #import "FoundBaseClass.h"
 #import <UIImageView+WebCache.h>
+#import "LogInToRegister.h"
 
 @interface FoundSt ()
 
@@ -209,6 +210,9 @@
         [self.navigationController popViewControllerAnimated:NO];
         
     }else if (btn.tag ==101){
+        LogInToRegister *vc =[[LogInToRegister alloc]init];
+        
+        [self.navigationController pushViewController:vc animated:YES];
         
         
     }else{

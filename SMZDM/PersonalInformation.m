@@ -27,11 +27,42 @@
     
     self.view.backgroundColor =[UIColor whiteColor];
     
+    
+    self.view.backgroundColor=[UIColor whiteColor];
+    
+    UINavigationBar *bar =[[UINavigationBar alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 64)];
+    
+    UINavigationItem *item =[[UINavigationItem alloc]initWithTitle:@"登录"];
+    
+    [bar setTitleTextAttributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:20]}];
+    
+    UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] init];
+    
+    item.leftBarButtonItem = leftItem;
+    [bar setBackgroundImage:[UIImage alloc] forBarMetrics:UIBarMetricsDefault];
+    
+    bar.shadowImage=[[UIImage alloc]init];
+    
+    [bar pushNavigationItem:item animated:YES];
+    
+    [self.view addSubview:bar];
+    
+    UIButton *leftButton =[[UIButton alloc]initWithFrame:CGRectMake(10, 30, 8, 18)];
+    
+    [leftButton setBackgroundImage:[UIImage imageNamed:@"ic_back_s@2x"] forState:UIControlStateNormal];
+    
+    [leftButton addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
+    
+    leftButton.tag =1;
+    
+    [bar addSubview:leftButton];
+
+    
     _imageViewTop =  [[UIImageView alloc] init];
     _imageViewTop.frame = CGRectMake(0, 0, 320, 300);
     _imageViewTop.image =[UIImage imageNamed:@"Bg_user@2x"];
     [self.view addSubview:_imageViewTop];
-
+    [self.view bringSubviewToFront:bar];
     
     _bgScrollView =[[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, 320, 568)];
 //    _bgScrollView.alpha= 0 ;
@@ -40,9 +71,10 @@
     _bgScrollView.delegate=self;
     self.automaticallyAdjustsScrollViewInsets=NO;
     _bgScrollView.delegate=self;
+    
     [self.view  addSubview:_bgScrollView];
     
-    
+    [self.view bringSubviewToFront:bar];
     _downTableView =[[UITableView alloc]initWithFrame:CGRectMake(0, 300, 320, 1000) style:UITableViewStyleGrouped];
     _downTableView .delegate=self;
     _downTableView.dataSource=self;
@@ -267,11 +299,11 @@
     
 }
 
-
-
-
-
-
+-(void)back{
+    
+    [self.navigationController popViewControllerAnimated:YES];
+    
+}
 
 
 //- (UITableView *)scrollViewItemWithY:(CGFloat)y andNumber:(int)num {

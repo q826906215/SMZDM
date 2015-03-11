@@ -13,6 +13,7 @@
 #import "StrechyParallaxScrollView.h"
 #import "BaskInContentBaseClass.h"
 #import <UIImageView+WebCache.h>
+#import "LogInToRegister.h"
 
 
 @interface BaskinContentSt ()
@@ -213,7 +214,9 @@
         [self.navigationController popViewControllerAnimated:NO];
         
     }else if (btn.tag ==101){
+        LogInToRegister *vc =[[LogInToRegister alloc]init];
         
+        [self.navigationController pushViewController:vc animated:YES];
         
     }else{
         

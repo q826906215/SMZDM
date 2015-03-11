@@ -14,6 +14,7 @@
     PrefeBaseClass *preferentialClass;
     
     UIWebView *webView;
+    UIWebView * web;
     
     UITableView *tableViewdo;
 

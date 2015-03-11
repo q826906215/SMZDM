@@ -13,6 +13,7 @@
 #import "StrechyParallaxScrollView.h"
 #import "InterfBaseClass.h"
 #import <UIImageView+WebCache.h>
+#import "LogInToRegister.h"
 
 @interface SelectSt ()
 {
@@ -131,6 +132,7 @@
     [share setBackgroundImage:[UIImage imageNamed:@"ic_xq_share@2x"] forState:UIControlStateNormal];
     [share addTarget:self action:@selector(backBtnClick:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:share];
+    
     webView =[[UIWebView alloc]initWithFrame:CGRectMake(0, 300, 320, 268)];
     
     webView.delegate = self;
@@ -192,6 +194,11 @@
         [self.navigationController popViewControllerAnimated:NO];
         
     }else if (btn.tag ==101){
+        
+        NSLog(@"wwwww");
+        LogInToRegister *vc =[[LogInToRegister alloc]init];
+        
+        [self.navigationController pushViewController:vc animated:YES];
         
         
     }else{

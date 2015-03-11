@@ -12,6 +12,7 @@
 @interface GoodsDetails : UIViewController<UIScrollViewDelegate,UIWebViewDelegate>
 {
     PrefeBaseClass *preferentialClass;
+    
     UIWebView *webView;
     
     UITableView *tableViewdo;

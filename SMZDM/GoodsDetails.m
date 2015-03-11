@@ -58,6 +58,8 @@
     _imageBG.backgroundColor=[UIColor redColor];
     
     strechy=[[StrechyParallaxScrollView alloc]initWithFrame:self.view.frame andTopView:_imageBG];
+    
+    
     strechy.backgroundColor =[UIColor brownColor];
     strechy.contentSize =CGSizeMake(320, 568);
     
@@ -133,6 +135,37 @@
     [share setBackgroundImage:[UIImage imageNamed:@"ic_xq_share@2x"] forState:UIControlStateNormal];
     [share addTarget:self action:@selector(backBtnClick:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:share];
+//    
+//    UIImageView *image=[[UIImageView alloc]initWithFrame:CGRectMake(60, 528, 40, 40)];
+//    
+//    image.image =[UIImage imageNamed:@"ico_zhi@2x.png "];
+//    
+//    [self.view addSubview:image];
+//    
+    UIButton *shareSet= [UIButton buttonWithType:UIButtonTypeCustom];
+    shareSet.frame = CGRectMake(0, 508, 160, 60);
+    
+    shareSet.backgroundColor=[UIColor whiteColor];
+    shareSet.tag =104;
+//    [shareSet setBackgroundImage:[UIImage imageNamed:@"ic_xq_share@2x"] forState:UIControlStateNormal];
+    [shareSet addTarget:self action:@selector(backBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:shareSet];
+    
+    UIButton *shareSt = [UIButton buttonWithType:UIButtonTypeCustom];
+    shareSt.frame = CGRectMake(160,508, 160, 60);
+    shareSt.tag =105;
+    shareSt.backgroundColor=[UIColor whiteColor];
+    [shareSt setBackgroundImage:[UIImage imageNamed:@"ic_xq_share@2x"] forState:UIControlStateNormal];
+    [shareSt addTarget:self action:@selector(backBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:shareSt];
+    
+    UIButton *shareAt = [UIButton buttonWithType:UIButtonTypeCustom];
+    shareAt.frame = CGRectMake(130, 490, 60, 60);
+    shareAt.tag =103;
+    [shareAt setBackgroundImage:[UIImage imageNamed:@"night_ico_shopping_cart@2x"] forState:UIControlStateNormal];
+    [shareAt addTarget:self action:@selector(backBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:shareAt];
+    
     webView =[[UIWebView alloc]initWithFrame:CGRectMake(0, 300, 320, 268)];
    
     webView.delegate = self;
@@ -142,8 +175,10 @@
     [strechy addSubview:webView];
     
     
+
 }
 - (void)webViewDidFinishLoad:(UIWebView *)aWebView {
+    
     CGRect frame = aWebView.frame;
     frame.size.height = 1;
     aWebView.frame = frame;
@@ -166,15 +201,19 @@
     view.backgroundColor =[UIColor whiteColor];
     
     
-    UILabel *things =[[UILabel alloc]initWithFrame:CGRectMake(0,0, 320, 50)];
+    UILabel *things =[[UILabel alloc]initWithFrame:CGRectMake(10,0, 300, 50)];
     
-    things.backgroundColor =[UIColor blackColor];
+    things.text =self.good.articleTitle;
+    
+    things.numberOfLines=0;
     
     [view addSubview:things];
     
-    UILabel *theRice =[[UILabel alloc]initWithFrame:CGRectMake(0,50, 320, 50)];
+    UILabel *theRice =[[UILabel alloc]initWithFrame:CGRectMake(10,50, 300, 50)];
     
-    theRice.backgroundColor =[UIColor blueColor];
+    theRice.text=self.good.articlePrice;
+    
+    theRice.textColor=[UIColor redColor];
     
     [view addSubview:theRice];
  
@@ -194,6 +233,8 @@
         
     }else if (btn.tag ==101){
         
+        
+    }else if(btn.tag==102){
         
     }else{
         

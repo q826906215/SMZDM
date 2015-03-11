@@ -32,7 +32,29 @@
 #import "foundBaseClass.h"
 #import "foundArticleMallClient.h"
 
+ 
+#import "InterfArticleCategory.h"
+#import "InterfData.h"
+#import "InterfBaseClass.h"
+#import "InterfArticleMallClient.h"
 #import "PrefeArticleCategory.h"
 #import "PrefeData.h"
 #import "PrefeBaseClass.h"
 #import "PrefeArticleMallClient.h"
+#import "HaiBaseClass.h"
+#import "HaiArticleCategory.h"
+#import "HaiData.h"
+#import "foundStArticleCategory.h"
+#import "foundStData.h"
+#import "foundStBaseClass.h"
+#import "foundStArticleMallClient.h"
+
+#import "InformatBaseClass.h"
+#import "InformatArticleCategory.h"
+#import "InformatData.h"
+
+#import "GodPriceHaiTaoData.h"
+#import "GodPriceHaiTaoArticleCategory.h"
+#import "GodPriceHaiTaoArticleLinkList.h"
+#import "GodPriceHaiTaoBaseClass.h"
+

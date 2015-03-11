@@ -11,13 +11,20 @@
 @interface PersonalInformation : UIViewController<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>{
     
     
-    UITableView *tableViewdo;
+//    UITableView *_tableViewdo;
+//    
+//    UIImageView * _scalingFigure;
+//    
+//    UIScrollView *_sceollView;
     
-    UIImageView * scalingFigure;
+//    UIView * _aView;
     
-    UIScrollView *_sceollView;
     
-    UIView *view;
+    
+    UIImageView * _imageViewTop;
+    UITableView * _downTableView ;
+    UIScrollView * _bgScrollView;
+    
 }
 
 @end

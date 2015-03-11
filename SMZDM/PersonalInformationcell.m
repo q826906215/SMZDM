@@ -13,35 +13,107 @@
 - (void)awakeFromNib {
     // Initialization code
     
-    int  lie = 3;
-    for (int i= 0 ; i<6  ; i++) {
-        float  row =  i / lie; //  1
-        float  clume = i % lie; // 3 2 1 0
-        float   width = 320/3;
-        float  height = 100;
-        UIButton * optionBtn =[UIButton   buttonWithType:UIButtonTypeSystem];
-        optionBtn.tag  =  i+ 10;
-        optionBtn.frame = CGRectMake(clume * width , 50+row * height, width, height);
-        [self  addSubview:optionBtn];
+    
+    
+}
+
+-(id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+{
+    self = [super initWithStyle:style reuseIdentifier:@""];
+    if (self)
+    {
         
-        UIImageView * imageV =[[UIImageView alloc] init];
-        imageV.frame= CGRectMake(40, 30, 25, 25);
-        imageV.image= [UIImage imageNamed:[NSString stringWithFormat:@"%d@2x",i+1]];
-        [optionBtn addSubview:imageV];
-        NSArray * array =@[@"排行榜",@"白菜党",@"神价格",@"奇葩物"];
-        UILabel * lab =[[UILabel alloc]init];
-        lab.frame = CGRectMake(23, 70, 60, 30);
-        lab.textAlignment =NSTextAlignmentCenter;
-        lab.text=[array objectAtIndex:i];
-        lab.textColor = [UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:1];
-        [optionBtn addSubview:lab];
     }
     
+    
+    
+    
+    return self;
+    
+    
+}
 
+
+-(void )getbg:(NSInteger)indexPath
+{
+    
+    
+    
+    UIImageView * imageV =[[UIImageView alloc] init];
+    imageV.frame =CGRectMake(0, 2, 50, 60);
+//      imageV.image = [UIImage imageNamed:[NSString stringWithFormat:@"%ld",20+indexPath]];
+    imageV.backgroundColor=[UIColor whiteColor];
+    
+    [self   addSubview:imageV];
+    
+    UIButton * btn =[UIButton buttonWithType:UIButtonTypeCustom];
+    btn.frame =CGRectMake(10, 15, 30, 30);  
+    [btn setBackgroundImage:[UIImage imageNamed:[NSString stringWithFormat:@"%d",20+indexPath]] forState:UIControlStateNormal];
+    [imageV addSubview:btn];
+
+    
+    NSArray * array =@[@"推送设置",@"夜间模式",@"签到提醒",@"移动网络图片质量",@"清除缓存",@"APP推荐",@"淘宝快捷下单",@"推荐“什么值得买”给好友",@"更多"];
+    UILabel * lab = [UILabel new];
+    lab.frame = CGRectMake(70, 0, 320, 60);
+    lab.text = [array objectAtIndex:indexPath];
+    [[self contentView] addSubview:lab];
+    
+
+    if (indexPath==0||indexPath==5||indexPath==7||indexPath==8) {
+        UIButton * bgBtn=[UIButton buttonWithType:UIButtonTypeCustom];
+        bgBtn .frame = CGRectMake(300, 22.5, 12,15 );
+        [bgBtn setBackgroundImage:[UIImage imageNamed:@"unRightClick@2x"] forState:UIControlStateNormal];
+        [[self contentView] addSubview:bgBtn];
+        
+    }
+    
+    if (indexPath==1||indexPath==2||indexPath==6) {
+        UISwitch * bgSwittch = [[UISwitch alloc]init];
+        bgSwittch.frame = CGRectMake(260, 10, 70, 40);
+        [[self contentView] addSubview:bgSwittch];
+    }
+    
+    if (indexPath==3 ) {
+        UILabel  * lab =[UILabel new];
+        lab .text = @"标清";
+        lab.frame= CGRectMake(270, 20, 40, 20);
+        lab.textColor = [UIColor colorWithRed:0.4 green:0.7 blue:0.7 alpha:1];
+        [[self contentView] addSubview:lab];
+        
+        
+        
+    }
+    
+    if (indexPath==4) {
+        UILabel  * lab =[UILabel new];
+        lab.frame= CGRectMake(245, 20, 60, 20);
+        lab.textAlignment= NSTextAlignmentRight;
+        lab.textColor = [UIColor colorWithRed:0.4 green:0.4 blue:0.4 alpha:1];
+        lab.text= @"2M";
+        [[self contentView] addSubview:lab];
+
+    }
+    
     
     
     
 }
+
+//-(void)setAccessoryType:(UITableViewCellAccessoryType)accessoryType
+//{
+//    
+//    
+//    
+//    
+//}
+
+
+
+
+
+
+
+
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

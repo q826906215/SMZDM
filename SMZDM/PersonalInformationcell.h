@@ -10,4 +10,11 @@
 
 @interface PersonalInformationcell : UITableViewCell
 
+-(void )getbg:(NSInteger)indexPath;
+
+
+
+
+
+
 @end

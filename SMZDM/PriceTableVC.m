@@ -9,6 +9,7 @@
 #import "PriceTableVC.h"
 #import "PriceCell.h"
 #import "NetworkTool.h"
+#import "GodPriceHaiTao.h"
 
 @interface PriceTableVC ()
 
@@ -83,6 +84,21 @@
     return cell;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    if (tableView.tag ==50 ) {
+        GodPriceHaiTao *vc=[[GodPriceHaiTao alloc]init];
+        
+//        vc.good =
+        
+        [self.navigationController pushViewController:vc animated:NO];
+        
+    }else{
+        
+    }
+    
+}
+
 #pragma mark - UITableViewDelegate
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -96,11 +112,11 @@
     return 0;
 }
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    [_publicTable deselectRowAtIndexPath:indexPath  animated:NO];
-    
-}
+//-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    [_publicTable deselectRowAtIndexPath:indexPath  animated:NO];
+//    
+//}
 
 //-------------top UI
 -(void)topView

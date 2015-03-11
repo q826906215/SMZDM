@@ -27,6 +27,9 @@
         for (int i = 0; i< 2; i++) {
             UIButton * button =[UIButton  buttonWithType:UIButtonTypeCustom];
             button.frame = CGRectMake(i * 160, 0, 160, 180);
+            button.tag=i+800;
+            [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d",button.tag] forKey:@"buttag"];
+            
             [aView addSubview:button];
         }
         _leftImage=[[UIImageView alloc]init];
@@ -116,6 +119,12 @@
     return self;
     
 }
+
+
+
+
+
+
 
 
 

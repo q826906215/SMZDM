@@ -11,12 +11,20 @@
 #import "TheListOf.h"
 #import "TheListViewCell.h"
 #import <UIImageView+WebCache.h>
+#import <UIButton+WebCache.h>
 #import "NetworkTool.h"
 #import "SearchVC.h"
 #import "BaskInContentCell.h"
 #import "PersonalInformation.h"
 #import "FoundCell.h"
+
+#import "Sollor.h"
 #import "GoodsDetails.h"
+#import "HaiTaoSt.h"
+#import "BaskinContentSt.h"
+#import "InformationSt.h"
+
+
 
 
 
@@ -89,9 +97,13 @@
     if (sender.tag ==1000) {
         SearchVC * svc =[[SearchVC alloc] init];
         [self presentViewController:svc animated:YES completion:nil];
+        
+        [svc release];
     }else{
         PersonalInformation *vc =[[PersonalInformation alloc]init];
         [self.navigationController pushViewController:vc animated:YES];
+        
+        [vc release];
     }
 }
 -(void)Classification{
@@ -417,15 +429,17 @@
         
         NSLog(@"%@",rows.bannerPic);
 
-        UIImageView *imageView =[[UIImageView alloc]init];
+        UIButton *imageView =[UIButton buttonWithType:UIButtonTypeRoundedRect];
         
         imageView.frame =CGRectMake(i*320, 0, 320, 170);
         
-        [hostInterfaceView addSubview:imageView];
+        imageView.tag=i;
         
-        [imageView sd_setImageWithURL:[NSURL URLWithString:rows.bannerPic]];
+        [imageView sd_setBackgroundImageWithURL:[NSURL URLWithString:rows.bannerPic] forState:UIControlStateNormal];
         
-        [imageView release];
+        [imageView addTarget:self action:@selector(setbutton:) forControlEvents:UIControlEventTouchUpInside];
+        
+         [hostInterfaceView addSubview:imageView];
         
     }
     
@@ -450,6 +464,19 @@
     yyy=320;
 }
 
+-(void)setbutton:(UIButton *)btn{
+    
+    if (btn.tag==2) {
+        
+         Sollor*news =[[Sollor alloc]init];
+        
+        news.good=[baseClass.data.rows objectAtIndex:btn.tag];
+        
+        [self.navigationController pushViewController:news animated:NO];
+
+    }
+}
+
 -(void)onTheWay{
     offsetx+=yyy;
     
@@ -469,6 +496,7 @@
 -(void)pageChanged:(UIPageControl *)sender{
     
     NSInteger  currentIndex =sender.currentPage;
+    
     
     [hostInterfaceView setContentOffset:CGPointMake(currentIndex *320, 0) animated:YES];
     
@@ -691,8 +719,6 @@
             break;
         case 101:{
             
-            
-            
             GoodsDetails *news =[[GoodsDetails alloc]init];
             
             news.good =[preferentialClass.data.rows objectAtIndex:indexPath.row];
@@ -703,25 +729,63 @@
             
             
             break;
-        case 102:
+        case 102:{
+            
+            HaiTaoSt *news =[[HaiTaoSt alloc]init];
+            
+            news.good=[haiTaoClass.data.rows objectAtIndex:indexPath.row];
+            
+            [self.navigationController pushViewController:news animated:NO];
+        }
             
             break;
-        case 103:
+        case 103:{
+            
+            int  tagg= [[[NSUserDefaults standardUserDefaults] valueForKey:@"buttag"] integerValue];
+            
+            
+            int  value = tagg + indexPath.row*2;
+            
+            HaiTaoSt *news =[[HaiTaoSt alloc]init];
+            
+            news.good=[haiTaoClass.data.rows objectAtIndex:value];
+            
+            [self.navigationController pushViewController:news animated:NO];
+            
+            
+        }
             
             break;
         case 104:
+        {
+            BaskinContentSt *news =[[BaskinContentSt alloc]init];
+            
+            news.good=[contentCless.data.rows objectAtIndex:indexPath.row];
+            
+            [self.navigationController pushViewController:news animated:NO];
+
+        }
             
             break;
         case 105:
             
             break;
-        case 106:
+        case 106:{
+            InformationSt *news =[[InformationSt alloc]init];
+            
+            news.good=[informationClass.data.rows objectAtIndex:indexPath.row];
+            
+            [self.navigationController pushViewController:news animated:NO];
+        }
             
             break;
             
         default:
             break;
     }
+    
+    
+    
     
     
     
